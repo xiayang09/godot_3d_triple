@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3ysovl2kgeo4"]
+
+[ext_resource type="Theme" uid="uid://1ufiqhcbexv4" path="res://asset/UI/theme/base_theme.tres" id="1_h805a"]
+[ext_resource type="Script" path="res://script/character_sel.gd" id="2_pg21y"]
+
+[node name="character_sel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_h805a")
+script = ExtResource("2_pg21y")
+
+[node name="character_box" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="character1" type="Button" parent="character_box"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+button_pressed = true
+text = "苏珊猴子"
+
+[node name="character2" type="Button" parent="character_box"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+text = "圆球"
+
+[node name="character3" type="Button" parent="character_box"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+text = "茶壶"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -183.61
+offset_right = 64.0
+offset_bottom = -139.61
+grow_horizontal = 2
+grow_vertical = 0
+text = "开始游戏"
+
+[connection signal="pressed" from="character_box/character1" to="." method="_on_character_1_pressed"]
+[connection signal="pressed" from="character_box/character2" to="." method="_on_character_2_pressed"]
+[connection signal="pressed" from="character_box/character3" to="." method="_on_character_3_pressed"]

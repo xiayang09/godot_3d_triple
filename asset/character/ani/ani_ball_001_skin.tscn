@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cka7274xxnvlk"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_nwiiu"]
+
+[node name="Skeleton3D" type="Skeleton3D"]
+bones/0/name = "DEF-BALL"
+bones/0/parent = -1
+bones/0/rest = Transform3D(-9.2181e-08, -0.77327, -9.96822e-08, 4.60905e-08, -9.2181e-08, 1.67239, -0.77327, 4.60905e-08, 0, 1.19209e-07, 2.07007, -5.2108e-15)
+bones/0/enabled = true
+bones/0/position = Vector3(1.19209e-07, 0.485322, -5.2108e-15)
+bones/0/rotation = Quaternion(-0.5, 0.5, 0.5, 0.5)
+bones/0/scale = Vector3(1.01502, 1.01502, 0.970643)
+
+[node name="_MeshInstance3D_91603" type="MeshInstance3D" parent="."]
+visible = false
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_nwiiu")
+skeleton = NodePath("")

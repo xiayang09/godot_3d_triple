@@ -1,0 +1,151 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3ysovl2kgeo4"]
+
+[ext_resource type="Theme" uid="uid://1ufiqhcbexv4" path="res://asset/UI/theme/base_theme.tres" id="1_f3lp8"]
+[ext_resource type="Script" path="res://script/StartGame.gd" id="2_01402"]
+
+[node name="Startgame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_f3lp8")
+script = ExtResource("2_01402")
+
+[node name="character_box" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -22.0
+offset_right = 200.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="character1" type="Button" parent="character_box"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+button_pressed = true
+text = "苏珊猴子"
+
+[node name="character2" type="Button" parent="character_box"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+text = "圆球"
+
+[node name="character3" type="Button" parent="character_box"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+text = "茶壶"
+
+[node name="GameMode_box" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -102.13
+offset_right = 245.0
+offset_bottom = -58.13
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="GameMode1" type="Button" parent="GameMode_box"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+button_pressed = true
+text = "俯视角"
+
+[node name="GameMode2" type="Button" parent="GameMode_box"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+text = "自由视角"
+
+[node name="GameMode3" type="Button" parent="GameMode_box"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+text = "横版视角"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -183.61
+offset_right = 64.0
+offset_bottom = -139.61
+grow_horizontal = 2
+grow_vertical = 0
+text = "开始游戏"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -123.495
+offset_right = 64.0
+offset_bottom = -79.4948
+grow_horizontal = 2
+grow_vertical = 0
+text = "退出游戏"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -267.0
+offset_top = -18.0
+offset_right = -117.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "角色选择："
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -267.0
+offset_top = -97.0
+offset_right = -117.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "游戏模式："
+
+[connection signal="pressed" from="character_box/character1" to="." method="_on_character_1_pressed"]
+[connection signal="pressed" from="character_box/character2" to="." method="_on_character_2_pressed"]
+[connection signal="pressed" from="character_box/character3" to="." method="_on_character_3_pressed"]
+[connection signal="pressed" from="GameMode_box/GameMode1" to="." method="_on_game_mode_1_pressed"]
+[connection signal="pressed" from="GameMode_box/GameMode2" to="." method="_on_game_mode_2_pressed"]
+[connection signal="pressed" from="GameMode_box/GameMode3" to="." method="_on_game_mode_3_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

@@ -1,0 +1,44 @@
+[gd_resource type="VisualShader" load_steps=6 format=3 uid="uid://darcekp0fiyes"]
+
+[ext_resource type="Texture2D" uid="uid://deafrhk1dwfgd" path="res://asset/character/tex/T_Ball_body.png" id="1_mux5n"]
+[ext_resource type="Texture2D" uid="uid://c8gx8av8yitc4" path="res://asset/character/tex/T_Ball_eyes.png" id="2_7mnfd"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_pk6y7"]
+texture = ExtResource("1_mux5n")
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_3fstl"]
+expanded_output_ports = [0]
+texture = ExtResource("2_7mnfd")
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_r7rcj"]
+output_port_for_preview = 0
+input_name = "exposure"
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+uniform sampler2D tex_frg_2 : source_color;
+
+
+
+void fragment() {
+// Texture2D:2
+	vec4 n_out2p0 = texture(tex_frg_2, UV);
+
+
+// Output:0
+	ALBEDO = vec3(n_out2p0.xyz);
+
+
+}
+"
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_pk6y7")
+nodes/fragment/2/position = Vector2(-360, 100)
+nodes/fragment/6/node = SubResource("VisualShaderNodeTexture_3fstl")
+nodes/fragment/6/position = Vector2(-320, 440)
+nodes/fragment/7/node = SubResource("VisualShaderNodeInput_r7rcj")
+nodes/fragment/7/position = Vector2(-700, 540)
+nodes/fragment/connections = PackedInt32Array(7, 0, 6, 0, 2, 0, 0, 0)

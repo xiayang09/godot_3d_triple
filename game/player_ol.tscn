@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://f7l415vu01t2"]
+
+[ext_resource type="Script" path="res://script/player_ol.gd" id="1_v50rm"]
+[ext_resource type="Script" path="res://script/CameraArm_ol.gd" id="2_qegge"]
+[ext_resource type="Script" path="res://script/StateMachine/StateMachine.gd" id="3_mx8th"]
+[ext_resource type="Script" path="res://script/StateMachine/Idle.gd" id="4_0xr0x"]
+[ext_resource type="Script" path="res://script/StateMachine/Run.gd" id="5_q3rsx"]
+[ext_resource type="Script" path="res://script/StateMachine/Jump.gd" id="6_gehe4"]
+[ext_resource type="Script" path="res://script/StateMachine/Fall.gd" id="7_uxydo"]
+[ext_resource type="AudioStream" uid="uid://i41eh4yiqgu6" path="res://asset/sound/character/click.WAV" id="8_i23br"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4wri1"]
+margin = 0.0
+height = 1.0
+
+[node name="player_ol" type="CharacterBody3D"]
+script = ExtResource("1_v50rm")
+
+[node name="characterRotationRoot" type="Node3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_4wri1")
+
+[node name="CameraArm" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0.5, 0)
+spring_length = 30.0
+margin = 0.1
+script = ExtResource("2_qegge")
+
+[node name="Camera3D" type="Camera3D" parent="CameraArm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30)
+fov = 20.0
+far = 100.0
+
+[node name="StateMachine" type="Node3D" parent="." node_paths=PackedStringArray("current_state")]
+script = ExtResource("3_mx8th")
+current_state = NodePath("Idle")
+
+[node name="Idle" type="Node3D" parent="StateMachine" node_paths=PackedStringArray("player")]
+script = ExtResource("4_0xr0x")
+player = NodePath("../..")
+
+[node name="Run" type="Node3D" parent="StateMachine" node_paths=PackedStringArray("player")]
+script = ExtResource("5_q3rsx")
+player = NodePath("../..")
+
+[node name="Jump" type="Node3D" parent="StateMachine" node_paths=PackedStringArray("player")]
+script = ExtResource("6_gehe4")
+player = NodePath("../..")
+
+[node name="Fall" type="Node3D" parent="StateMachine" node_paths=PackedStringArray("player")]
+script = ExtResource("7_uxydo")
+player = NodePath("../..")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+avoidance_enabled = true
+height = 2.0
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_i23br")
+bus = &"SFX"
