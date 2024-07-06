@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://wl5h0aa6jl8u"]
+
+[ext_resource type="Script" path="res://script/character_skin.gd" id="1_afqfl"]
+[ext_resource type="PackedScene" uid="uid://cka7274xxnvlk" path="res://asset/character/ani/ani_ball_001_skin.tscn" id="2_a8qdv"]
+[ext_resource type="PackedScene" uid="uid://b8jsv275bu1sj" path="res://asset/character/model/SM_Suzanne.tscn" id="3_lmbms"]
+[ext_resource type="PackedScene" uid="uid://cgl43cu4bb0k4" path="res://asset/character/ani/ani_ball_001_action.tscn" id="4_0rco4"]
+[ext_resource type="Material" uid="uid://bf2d71e5n63qx" path="res://asset/character/mat/M_tp_jin.tres" id="4_ab01f"]
+[ext_resource type="PackedScene" uid="uid://d30vxvfloxw5r" path="res://asset/character/ani/ani_ball_001_tree.tscn" id="5_0v3cr"]
+[ext_resource type="AudioStream" uid="uid://bjqrirfmttuby" path="res://asset/sound/character/jump2.mp3" id="6_q6avv"]
+
+[node name="tp_Suzanne_001" type="Node3D"]
+script = ExtResource("1_afqfl")
+
+[node name="RIG-Ball" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0.284901)
+
+[node name="Skeleton3D" parent="RIG-Ball" instance=ExtResource("2_a8qdv")]
+bones/0/position = Vector3(1.19209e-07, 0.452323, -5.2108e-15)
+bones/0/rotation = Quaternion(-0.5, 0.5, 0.5, 0.5)
+bones/0/scale = Vector3(1.05139, 1.05139, 0.904647)
+
+[node name="Suzanne" parent="RIG-Ball" instance=ExtResource("3_lmbms")]
+material_override = ExtResource("4_ab01f")
+skeleton = NodePath("../Skeleton3D")
+
+[node name="AnimationPlayer" parent="." instance=ExtResource("4_0rco4")]
+playback_default_blend_time = 0.1
+
+[node name="AnimationTree" parent="." instance=ExtResource("5_0v3cr")]
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_q6avv")
+bus = &"SFX"

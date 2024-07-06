@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cef6d1qhkttkx"]
+
+[ext_resource type="Shader" path="res://shader/CURVATURE.gdshader" id="1_kib8l"]
+[ext_resource type="Texture2D" uid="uid://cjsjt8rt6w8lg" path="res://asset/scene/tex/qipan.png" id="2_7quen"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_kib8l")
+shader_parameter/albedo = Color(0.18359, 0.18359, 0.18359, 1)
+shader_parameter/point_size = null
+shader_parameter/roughness = 0.8
+shader_parameter/specular = 0.3
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector2(1, 1)
+shader_parameter/uv1_offset = Vector2(0, 0)
+shader_parameter/CURVATURE = 2.0
+shader_parameter/CURVATURE_ACTIVE = true
+shader_parameter/CURVATURE_DISTANCE = 2.0
+shader_parameter/SPRITE_POS_Y = -0.01
+shader_parameter/texture_albedo = ExtResource("2_7quen")

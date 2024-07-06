@@ -1,6 +1,5 @@
 extends stateBase
-@export var player:playerx
-
+@export var player: playerx 
 func enter() ->void:
 	super.enter()
 	print("跳跃状态")

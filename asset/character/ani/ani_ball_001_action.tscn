@@ -50,6 +50,18 @@ tracks/2/path = NodePath("RIG-Ball/Skeleton3D:DEF-BALL")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = PackedFloat32Array(0, 1, 0.755767, 0.755767, 1.75075, 0.0666667, 1, 0.75596, 0.75596, 1.74986, 0.1, 1, 0.756991, 0.756991, 1.7451, 0.133333, 1, 0.759593, 0.759593, 1.73321, 0.166667, 1, 0.76458, 0.76458, 1.71062, 0.2, 1, 0.774654, 0.774654, 1.66663, 0.233333, 1, 0.82603, 0.82603, 1.47615, 0.266667, 1, 0.942615, 0.942615, 1.16416, 0.3, 1, 1.10808, 1.10808, 0.825353, 0.333333, 1, 1.26584, 1.26584, 0.624084, 0.366667, 1, 1.19497, 1.19497, 0.702051, 0.4, 1, 1.10246, 1.10246, 0.830141, 0.433333, 1, 1.03156, 1.03156, 0.941524, 0.458333, 1, 1, 1, 1)
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Jump:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="Animation" id="Animation_dur7c"]
 resource_name = "jump_fall"

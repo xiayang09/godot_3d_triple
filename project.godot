@@ -10,16 +10,26 @@ config_version=5
 
 [application]
 
-config/name="godot_3d_overlook"
+config/name="godot_3d_triple"
 config/version="0.01"
-run/main_scene="res://game/start_game.tscn"
+run/main_scene="res://game/_init_.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://asset/pic/logo.png"
+config/icon="res://asset/UI/logo.png"
+
+[audio]
+
+buses/default_bus_layout="res://script/default_bus_layout.tres"
 
 [autoload]
 
 Global="*res://script/Global.gd"
 Bgm="*res://game/bgm.tscn"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
 
 [filesystem]
 

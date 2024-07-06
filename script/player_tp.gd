@@ -1,5 +1,4 @@
 extends playerx
-@onready var camera_arm: SpringArm3D = $CameraArm
 
 var direction:Vector3
 const SPEED = 5.0
@@ -17,9 +16,9 @@ func _physics_process(delta):
 	var _rotation:Quaternion = Quaternion.from_euler(Vector3(0,camera_arm.transform.basis.get_euler().y,0))
 	direction = (_rotation * Vector3(input_dir.x,0,input_dir.y)).normalized()
 	var playerpos = self.position
-	if abs(playerpos.x) > Global.map_size.x/2:
+	if abs(playerpos.x) > Global.Map_size.x/2:
 		self.position.x = -playerpos.x
-	if abs(playerpos.z) > Global.map_size.z/2:
+	if abs(playerpos.z) > Global.Map_size.z/2:
 		self.position.z = -playerpos.z
 	move_and_slide()
 

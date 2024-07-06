@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce7rv8m5mvahs"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dnwrk"]
+sky_top_color = Color(0.288273, 0.613945, 0.807043, 1)
+sky_horizon_color = Color(0.364, 0.4368, 0.52, 1)
+ground_bottom_color = Color(0.0263158, 0.0512284, 0.025216, 1)
+ground_horizon_color = Color(0.364706, 0.435294, 0.521569, 1)
+ground_curve = 0.355061
+sun_angle_max = 90.0
+
+[sub_resource type="Sky" id="Sky_uyqdr"]
+sky_material = SubResource("ProceduralSkyMaterial_dnwrk")
+
+[sub_resource type="Environment" id="Environment_25kld"]
+background_mode = 2
+sky = SubResource("Sky_uyqdr")
+tonemap_mode = 2
+sdfgi_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.409629, 0.553296, 0.625784, 1)
+
+[node name="Environment" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_25kld")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.999999, 0.000986569, 0.00120064, -0.00119931, -0.00135217, 0.999998, 0.000988191, -0.999999, -0.00135098, 0, 4.53147, 0)
+shadow_enabled = true
+directional_shadow_fade_start = 0.946
+directional_shadow_max_distance = 54.2
+directional_shadow_pancake_size = 0.0

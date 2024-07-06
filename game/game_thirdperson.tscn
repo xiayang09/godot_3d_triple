@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtx17m35ri01i"]
+
+[ext_resource type="Script" path="res://script/game_ol.gd" id="1_ktcx5"]
+[ext_resource type="PackedScene" uid="uid://cjsmy23qa62ue" path="res://game/player_tp.tscn" id="2_3i6v0"]
+[ext_resource type="PackedScene" uid="uid://ce7rv8m5mvahs" path="res://game/environment.tscn" id="4_fhlr2"]
+[ext_resource type="PackedScene" uid="uid://cddrbnno68635" path="res://game/game_thirdperson_UI.tscn" id="4_t0q2c"]
+
+[node name="game_thirdperson" type="Node3D" node_paths=PackedStringArray("player")]
+script = ExtResource("1_ktcx5")
+player = NodePath("player_tp")
+
+[node name="player_tp" parent="." instance=ExtResource("2_3i6v0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.05878)
+
+[node name="map_box" type="Node3D" parent="."]
+
+[node name="game_thirdperson_UI" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_t0q2c")]
+player = NodePath("../player_tp")
+
+[node name="Environment" parent="." instance=ExtResource("4_fhlr2")]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://mpo6s30k2spt"]
+
+[ext_resource type="Script" path="res://script/character_skin.gd" id="1_o3b8p"]
+[ext_resource type="PackedScene" uid="uid://cka7274xxnvlk" path="res://asset/character/ani/ani_ball_001_skin.tscn" id="2_4o21s"]
+[ext_resource type="PackedScene" uid="uid://cgl43cu4bb0k4" path="res://asset/character/ani/ani_ball_001_action.tscn" id="3_b5nwy"]
+[ext_resource type="PackedScene" uid="uid://ic8rnokmmw28" path="res://asset/character/model/SM_Ball.tscn" id="3_eki5b"]
+[ext_resource type="Material" uid="uid://cpv7rgeowx83y" path="res://asset/character/mat/M_ol_Ball_001.tres" id="4_eeig8"]
+[ext_resource type="PackedScene" uid="uid://d30vxvfloxw5r" path="res://asset/character/ani/ani_ball_001_tree.tscn" id="4_t1vfe"]
+[ext_resource type="AudioStream" uid="uid://bjqrirfmttuby" path="res://asset/sound/character/jump2.mp3" id="6_x3m3i"]
+
+[node name="ol_Ball_001" type="Node3D"]
+script = ExtResource("1_o3b8p")
+
+[node name="RIG-Ball" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="RIG-Ball" instance=ExtResource("2_4o21s")]
+bones/0/position = Vector3(1.19209e-07, 0.499922, -5.2108e-15)
+bones/0/rotation = Quaternion(-0.5, 0.5, 0.5, 0.5)
+bones/0/scale = Vector3(1, 1, 1)
+
+[node name="Ball" parent="RIG-Ball" instance=ExtResource("3_eki5b")]
+material_override = ExtResource("4_eeig8")
+skeleton = NodePath("../Skeleton3D")
+
+[node name="AnimationPlayer" parent="." instance=ExtResource("3_b5nwy")]
+
+[node name="AnimationTree" parent="." instance=ExtResource("4_t1vfe")]
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_x3m3i")
+bus = &"SFX"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ic8rnokmmw28"]
 
-[ext_resource type="Material" uid="uid://cpv7rgeowx83y" path="res://asset/character/mat/M_Ball_001.tres" id="1_drkbd"]
+[ext_resource type="Material" uid="uid://cpv7rgeowx83y" path="res://asset/character/mat/M_ol_Ball_001.tres" id="1_drkbd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glgms"]
 

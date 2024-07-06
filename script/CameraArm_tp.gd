@@ -12,7 +12,7 @@ extends SpringArm3D
 ## 最小相机视距（弹簧臂的长度）
 @export var min_distance:float= 1
 ## 最大相机视距（弹簧臂的长度）
-@export var max_distance:float= 10
+@export var max_distance:float= 15
 ## 视角缩放速度
 @export var distance_speed:float= 10
 ## 是否开启阻尼
@@ -65,3 +65,4 @@ func update_mouse_input() -> void:
 		mouse_wheel = MOUSE_WHEEL_STATE.DOWN
 	else :
 		mouse_wheel = MOUSE_WHEEL_STATE.NONE
+	

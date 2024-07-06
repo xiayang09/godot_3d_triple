@@ -1,6 +1,6 @@
 extends stateBase
-## 玩家节点
-@export var player:playerx
+@export var player: playerx 
+
 func enter() ->void:
 	super.enter()
 	print("奔跑状态")

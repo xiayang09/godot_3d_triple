@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b8jsv275bu1sj"]
 
-[ext_resource type="Material" uid="uid://cucbdjh1s3psq" path="res://asset/character/mat/M_Suzanne_001.tres" id="1_wfyj6"]
+[ext_resource type="Material" uid="uid://cucbdjh1s3psq" path="res://asset/character/mat/M_ol_Suzanne_001.tres" id="1_wfyj6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_acv8a"]
 
