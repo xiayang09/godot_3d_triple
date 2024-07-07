@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://script/CameraArm_tp.gd" id="2_00a8j"]
 [ext_resource type="PackedScene" uid="uid://wl5h0aa6jl8u" path="res://game/character/tp_Suzanne_001.tscn" id="2_jjo3c"]
 [ext_resource type="Script" path="res://script/StateMachine/StateMachine.gd" id="3_8acrj"]
-[ext_resource type="Script" path="res://script/StateMachine/Idle.gd" id="4_53khd"]
-[ext_resource type="Script" path="res://script/StateMachine/Run.gd" id="5_m5lft"]
-[ext_resource type="Script" path="res://script/StateMachine/Jump.gd" id="6_m23d2"]
-[ext_resource type="Script" path="res://script/StateMachine/Fall.gd" id="7_cid2r"]
+[ext_resource type="Script" path="res://script/StateMachine/tp_Idle.gd" id="4_53khd"]
+[ext_resource type="Script" path="res://script/StateMachine/tp_Run.gd" id="5_m5lft"]
+[ext_resource type="Script" path="res://script/StateMachine/tp_Jump.gd" id="6_m23d2"]
+[ext_resource type="Script" path="res://script/StateMachine/tp_Fall.gd" id="7_cid2r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4wri1"]
 margin = 0.0

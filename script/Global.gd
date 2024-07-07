@@ -29,14 +29,18 @@ func change_character(player,skin):
 		skin = "ol_"+ skin
 	if Global.Gamemode == Global.TridPerson:
 		skin = "tp_"+ skin
+	if Global.Gamemode == Global.SideScrolling:
+		skin = "ol_"+ skin
 	var characterpath = "res://game/character/{str}.tscn"
 	var character_skin = load(characterpath.format({"str":skin})).instantiate()
 	characterRotationRoot.add_child(character_skin)
 	player.character_skin = character_skin
+	if Global.Gamemode == Global.SideScrolling:
+		character_skin.rotation = Vector3(0,-1.570797,0)
 func load_map(map,map_box,mode:int = 0):
 	var mappath = "res://game/map/{str}.tscn"
 	var map_s = load(mappath.format({"str":map}))
-	if mode ==0:
+	if mode ==0 or mode ==2:
 		var map_in = map_s.instantiate()
 		map_box.add_child(map_in)
 	elif mode == 1: 

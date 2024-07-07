@@ -148,6 +148,27 @@ theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
 toggle_mode = true
 text = " 横版视角 "
 
+[node name="ol_map_box" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 372.0
+offset_top = -401.0
+offset_right = 587.0
+offset_bottom = -339.0
+grow_vertical = 0
+columns = 3
+
+[node name="map1" type="Button" parent="ol_map_box"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+button_pressed = true
+text = " 测试地图1 "
+script = ExtResource("3_dbou0")
+map_name = "overlook_map_1"
+
 [node name="tp_map_box" type="GridContainer" parent="."]
 visible = false
 layout_mode = 1
@@ -178,7 +199,8 @@ text = " 山地测试(无限大) "
 script = ExtResource("3_dbou0")
 map_name = "thirdperson_map_shan"
 
-[node name="ol_map_box" type="GridContainer" parent="."]
+[node name="ss_map_box" type="GridContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -190,14 +212,14 @@ offset_bottom = -339.0
 grow_vertical = 0
 columns = 3
 
-[node name="map1" type="Button" parent="ol_map_box"]
+[node name="map1" type="Button" parent="ss_map_box"]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
 toggle_mode = true
 button_pressed = true
-text = " 测试地图1 "
+text = " 横板地图1 "
 script = ExtResource("3_dbou0")
-map_name = "overlook_map_1"
+map_name = "sidescrolling_map_1"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -282,8 +304,9 @@ grow_vertical = 0
 [connection signal="pressed" from="GameMode_box/GameMode1" to="." method="_on_game_mode_1_pressed"]
 [connection signal="pressed" from="GameMode_box/GameMode2" to="." method="_on_game_mode_2_pressed"]
 [connection signal="pressed" from="GameMode_box/GameMode3" to="." method="_on_game_mode_3_pressed"]
+[connection signal="pressed" from="ol_map_box/map1" to="." method="_on_map_1_pressed"]
 [connection signal="pressed" from="tp_map_box/map1" to="." method="_on_map_1_pressed"]
 [connection signal="pressed" from="tp_map_box/map2" to="." method="_on_map_2_pressed"]
-[connection signal="pressed" from="ol_map_box/map1" to="." method="_on_map_1_pressed"]
+[connection signal="pressed" from="ss_map_box/map1" to="." method="_on_map_1_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

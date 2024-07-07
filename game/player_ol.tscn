@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://script/CameraArm_ol.gd" id="2_qegge"]
 [ext_resource type="PackedScene" uid="uid://e14cy3abis02" path="res://game/character/ol_Suzanne_001.tscn" id="2_r731r"]
 [ext_resource type="Script" path="res://script/StateMachine/StateMachine.gd" id="3_mx8th"]
-[ext_resource type="Script" path="res://script/StateMachine/Idle.gd" id="4_0xr0x"]
-[ext_resource type="Script" path="res://script/StateMachine/Run.gd" id="5_q3rsx"]
-[ext_resource type="Script" path="res://script/StateMachine/Jump.gd" id="6_gehe4"]
-[ext_resource type="Script" path="res://script/StateMachine/Fall.gd" id="7_uxydo"]
+[ext_resource type="Script" path="res://script/StateMachine/tp_Idle.gd" id="4_0xr0x"]
+[ext_resource type="Script" path="res://script/StateMachine/tp_Run.gd" id="5_q3rsx"]
+[ext_resource type="Script" path="res://script/StateMachine/tp_Jump.gd" id="6_gehe4"]
+[ext_resource type="Script" path="res://script/StateMachine/tp_Fall.gd" id="7_uxydo"]
 [ext_resource type="AudioStream" uid="uid://i41eh4yiqgu6" path="res://asset/sound/character/click.WAV" id="8_i23br"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4wri1"]
@@ -16,11 +16,11 @@ height = 1.0
 
 [node name="player_ol" type="CharacterBody3D" node_paths=PackedStringArray("character_skin")]
 script = ExtResource("1_v50rm")
-character_skin = NodePath("characterRotationRoot/Suzanne_001")
+character_skin = NodePath("characterRotationRoot/ol_Suzanne_001")
 
 [node name="characterRotationRoot" type="Node3D" parent="."]
 
-[node name="Suzanne_001" parent="characterRotationRoot" instance=ExtResource("2_r731r")]
+[node name="ol_Suzanne_001" parent="characterRotationRoot" instance=ExtResource("2_r731r")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
