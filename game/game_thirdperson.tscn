@@ -14,7 +14,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.05878)
 
 [node name="map_box" type="Node3D" parent="."]
 
-[node name="game_thirdperson_UI" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_t0q2c")]
+[node name="game_thirdperson_UI" parent="." node_paths=PackedStringArray("player", "Mapbox") instance=ExtResource("4_t0q2c")]
 player = NodePath("../player_tp")
+Mapbox = NodePath("../map_box")
 
 [node name="Environment" parent="." instance=ExtResource("4_fhlr2")]

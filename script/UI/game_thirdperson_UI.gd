@@ -1,5 +1,6 @@
 extends Control
 @export var player: playerx
+@export var Mapbox: Node3D
 @onready var option_button: OptionButton = $PauseScreen/box/set/OptionButton
 
 func _ready() -> void:
@@ -53,3 +54,12 @@ func _on_esc_mouse_entered():
 func _on_esc_mouse_exited():
 	Global.ButtonEnter = false
 
+
+
+func _on_check_button_toggled(toggled_on: bool) -> void:
+	var cc = Mapbox.get_children()
+	for obj in cc:
+		obj.changedMat("CURVATURE_ACTIVE",toggled_on)
+		pass
+	#Mapbox.get_node("thirdperson_map_1").get_node("MeshInstance3D3").surface_material_override("shader_parameter/CURVATURE_ACTIVE",toggled_on)
+	#print(aa)

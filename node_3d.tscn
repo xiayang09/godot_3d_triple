@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://4htl8tgsosfc"]
+
+[ext_resource type="Script" path="res://Node3D.gd" id="1_41har"]
+[ext_resource type="ArrayMesh" uid="uid://c235yomflm3gm" path="res://asset/scene/model/map1.tres" id="2_pl37g"]
+[ext_resource type="Material" uid="uid://cef6d1qhkttkx" path="res://asset/scene/mat/M_tp_map2.tres" id="3_b513j"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gghi1"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_1durn"]
+sky_material = SubResource("ProceduralSkyMaterial_gghi1")
+
+[sub_resource type="Environment" id="Environment_gjrbo"]
+background_mode = 2
+sky = SubResource("Sky_1durn")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_41har")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gjrbo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.95518, 0.296025, 0, -0.296025, 0.95518, 0, 1.43745, 3.83921)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_pl37g")
+surface_material_override/0 = ExtResource("3_b513j")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CheckButton" type="CheckButton" parent="Control"]
+layout_mode = 0
+offset_right = 44.0
+offset_bottom = 24.0
+button_pressed = true
+
+[node name="HSlider" type="HSlider" parent="Control"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 41.0
+offset_right = 149.0
+offset_bottom = 96.0
+
+[connection signal="toggled" from="Control/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="value_changed" from="Control/HSlider" to="." method="_on_h_slider_value_changed"]

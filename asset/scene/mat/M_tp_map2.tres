@@ -16,5 +16,5 @@ shader_parameter/uv1_offset = Vector2(0, 0)
 shader_parameter/CURVATURE = 2.0
 shader_parameter/CURVATURE_ACTIVE = true
 shader_parameter/CURVATURE_DISTANCE = 2.0
-shader_parameter/SPRITE_POS_Y = -0.01
+shader_parameter/SPRITE_POS_Y = -0.12
 shader_parameter/texture_albedo = ExtResource("2_7quen")

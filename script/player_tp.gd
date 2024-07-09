@@ -2,7 +2,7 @@ extends playerx
 
 var direction:Vector3
 const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 5.0
 
 func _ready() -> void:
 	pass
