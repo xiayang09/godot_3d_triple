@@ -32,15 +32,6 @@ theme = ExtResource("2_uf8v2")
 theme_override_font_sizes/font_size = 20
 text = " 菜单(ESC) "
 
-[node name="CheckButton" type="CheckButton" parent="GameScreen"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 71.0
-offset_right = 128.0
-offset_bottom = 121.0
-theme_override_font_sizes/font_size = 22
-text = "弯曲"
-
 [node name="HBoxContainer" type="HBoxContainer" parent="GameScreen"]
 layout_mode = 1
 anchors_preset = 2
@@ -62,7 +53,43 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "WASD+SPACE"
 
+[node name="CheckButton" type="CheckButton" parent="GameScreen"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 160.0
+offset_right = 176.0
+offset_bottom = 184.0
+theme_override_font_sizes/font_size = 22
+button_pressed = true
+
+[node name="HSlider" type="HSlider" parent="GameScreen"]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 199.0
+offset_right = 255.0
+offset_bottom = 215.0
+value = 50.0
+
+[node name="Label" type="Label" parent="GameScreen"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 156.0
+offset_right = 142.0
+offset_bottom = 183.0
+theme_override_font_sizes/font_size = 22
+text = "弯曲开关："
+
+[node name="Label2" type="Label" parent="GameScreen"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 196.0
+offset_right = 142.0
+offset_bottom = 223.0
+theme_override_font_sizes/font_size = 22
+text = "弯曲曲率："
+
 [node name="PauseScreen" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -176,6 +203,7 @@ text = " 返回主界面 "
 [connection signal="mouse_exited" from="GameScreen/Esc" to="." method="_on_esc_mouse_exited"]
 [connection signal="pressed" from="GameScreen/Esc" to="." method="_on_esc_pressed"]
 [connection signal="toggled" from="GameScreen/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="value_changed" from="GameScreen/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="value_changed" from="PauseScreen/box/set/music" to="." method="_on_music_value_changed"]
 [connection signal="value_changed" from="PauseScreen/box/set/SFX" to="." method="_on_sfx_value_changed"]
 [connection signal="item_selected" from="PauseScreen/box/set/OptionButton" to="." method="_on_option_button_item_selected"]

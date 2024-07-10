@@ -54,12 +54,15 @@ func _on_esc_mouse_entered():
 func _on_esc_mouse_exited():
 	Global.ButtonEnter = false
 
-
-
 func _on_check_button_toggled(toggled_on: bool) -> void:
 	var cc = Mapbox.get_children()
 	for obj in cc:
 		obj.changedMat("CURVATURE_ACTIVE",toggled_on)
-		pass
-	#Mapbox.get_node("thirdperson_map_1").get_node("MeshInstance3D3").surface_material_override("shader_parameter/CURVATURE_ACTIVE",toggled_on)
-	#print(aa)
+	pass
+	
+
+func _on_h_slider_value_changed(value: float) -> void:
+	var cc = Mapbox.get_children()
+	for obj in cc:
+		obj.changedMat("SPRITE_POS_Y",value/5000*-1)
+	pass

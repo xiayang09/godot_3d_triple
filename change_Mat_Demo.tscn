@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=3 uid="uid://4htl8tgsosfc"]
+
+[ext_resource type="Script" path="res://change_Mat_Demo.gd" id="1_fupam"]
+[ext_resource type="ArrayMesh" uid="uid://c235yomflm3gm" path="res://asset/scene/model/map1.tres" id="2_cov82"]
+[ext_resource type="Material" uid="uid://cef6d1qhkttkx" path="res://asset/scene/mat/M_tp_map2.tres" id="3_k5238"]
+[ext_resource type="PackedScene" uid="uid://b8jsv275bu1sj" path="res://asset/character/model/SM_Suzanne.tscn" id="4_cwnc6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gghi1"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_1durn"]
+sky_material = SubResource("ProceduralSkyMaterial_gghi1")
+
+[sub_resource type="Environment" id="Environment_gjrbo"]
+background_mode = 2
+sky = SubResource("Sky_1durn")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eh1c4"]
+
+[node name="change_Mat_Demo" type="Node3D"]
+script = ExtResource("1_fupam")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gjrbo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.95518, 0.296025, 0, -0.296025, 0.95518, 0, 1.43745, 3.83921)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_cov82")
+surface_material_override/0 = ExtResource("3_k5238")
+
+[node name="Suzanne" parent="." instance=ExtResource("4_cwnc6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.70805)
+surface_material_override/0 = SubResource("ShaderMaterial_eh1c4")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CheckButton" type="CheckButton" parent="Control"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 15.0
+offset_right = 149.0
+offset_bottom = 39.0
+button_pressed = true
+
+[node name="HSlider" type="HSlider" parent="Control"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 38.0
+offset_right = 257.0
+offset_bottom = 93.0
+value = 100.0
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Control"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 90.0
+offset_right = 167.0
+offset_bottom = 131.0
+color = Color(0.184, 0.184, 0.184, 1)
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 18.0
+offset_right = 77.0
+offset_bottom = 41.0
+text = "开启弯曲："
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 58.0
+offset_right = 77.0
+offset_bottom = 81.0
+text = "弯曲曲率："
+
+[node name="Label3" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 99.0
+offset_right = 93.0
+offset_bottom = 122.0
+text = "颜色覆盖："
+
+[connection signal="toggled" from="Control/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="value_changed" from="Control/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="color_changed" from="Control/ColorPickerButton" to="." method="_on_color_picker_button_color_changed"]

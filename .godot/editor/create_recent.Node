@@ -1,4 +1,8 @@
+Label
 HSlider
+ColorPickerButton
+TextEdit
+ColorRect
 ProgressBar
 HSeparator
 CheckButton
@@ -8,8 +12,3 @@ Node3D
 CollisionShape3D
 StaticBody3D
 CSGMesh3D
-Path3D
-mapx
-Node
-TextureRect
-SubViewport

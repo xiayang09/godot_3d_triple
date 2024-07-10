@@ -4,7 +4,7 @@ shader_type spatial;
 render_mode blend_mix,cull_disabled,diffuse_burley,specular_schlick_ggx,depth_prepass_alpha;
 
 
-uniform vec4 albedo : source_color;
+uniform vec4 albedo : source_color = vec4(1,1,1,1);
 uniform sampler2D texture_albedo : source_color,filter_linear_mipmap,repeat_enable;
 uniform sampler2D texture_roughness : hint_roughness_r,filter_linear_mipmap,repeat_enable;
 uniform sampler2D texture_metallic : hint_default_white,filter_linear_mipmap,repeat_enable;
@@ -15,9 +15,9 @@ uniform float specular;
 uniform float metallic;
 uniform vec2 uv1_scale = vec2(1,1);
 uniform vec2 uv1_offset = vec2(0,0);
-uniform float CURVATURE;
+uniform float CURVATURE = 2;
 uniform bool CURVATURE_ACTIVE;
-uniform float CURVATURE_DISTANCE;
+uniform float CURVATURE_DISTANCE = 2;
 uniform float SPRITE_POS_Y;
 
 varying vec4 world_vertex; // Declare a variável aqui para que ela seja acessível em ambas as funções

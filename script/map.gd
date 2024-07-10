@@ -6,8 +6,6 @@ class_name mapx
 
 func _ready() -> void:
 	pass
-func changedMat(att:String,toggled:bool):
-	print(self)
+func changedMat(att:String,toggled):
 	for c in self.get_children():
-		print(c)
-		c.mesh.material.set_shader_parameter(att , toggled)
+		c.get_active_material(0).set_shader_parameter(att,toggled)
