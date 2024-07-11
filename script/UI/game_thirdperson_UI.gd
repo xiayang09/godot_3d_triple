@@ -55,14 +55,17 @@ func _on_esc_mouse_exited():
 	Global.ButtonEnter = false
 
 func _on_check_button_toggled(toggled_on: bool) -> void:
-	var cc = Mapbox.get_children()
-	for obj in cc:
-		obj.changedMat("CURVATURE_ACTIVE",toggled_on)
-	pass
-	
+	var CURVATURE_MESH = get_tree().get_nodes_in_group("CURVATURE_MESH")
+	var PLAYER_MESH = get_tree().get_nodes_in_group("PLAYER_MESH")
+	for obj in CURVATURE_MESH:
+		obj.get_active_material(0).set_shader_parameter("CURVATURE_ACTIVE",toggled_on)
+	for obj in PLAYER_MESH:
+		obj.get_active_material(0).set_shader_parameter("CURVATURE_ACTIVE",toggled_on)
 
 func _on_h_slider_value_changed(value: float) -> void:
-	var cc = Mapbox.get_children()
-	for obj in cc:
-		obj.changedMat("SPRITE_POS_Y",value/5000*-1)
-	pass
+	var CURVATURE_MESH = get_tree().get_nodes_in_group("CURVATURE_MESH")
+	var PLAYER_MESH = get_tree().get_nodes_in_group("PLAYER_MESH")
+	for obj in CURVATURE_MESH:
+		obj.get_active_material(0).set_shader_parameter("SPRITE_POS_Y",value/5000*-1)
+	for obj in PLAYER_MESH:
+		obj.get_active_material(0).set_shader_parameter("SPRITE_POS_Y",value/5000*-1)

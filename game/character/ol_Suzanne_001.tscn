@@ -14,9 +14,9 @@ script = ExtResource("1_qcu4x")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0.284901)
 
 [node name="Skeleton3D" parent="RIG-Ball" instance=ExtResource("2_0mfub")]
-bones/0/position = Vector3(1.19209e-07, 0.454659, -5.2108e-15)
+bones/0/position = Vector3(1.19209e-07, 0.465516, -5.2108e-15)
 bones/0/rotation = Quaternion(-0.5, 0.5, 0.5, 0.5)
-bones/0/scale = Vector3(1.04869, 1.04869, 0.909318)
+bones/0/scale = Vector3(1.03639, 1.03639, 0.931032)
 
 [node name="Suzanne" parent="RIG-Ball" instance=ExtResource("3_8p1is")]
 skeleton = NodePath("../Skeleton3D")
