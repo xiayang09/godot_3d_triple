@@ -1,16 +1,19 @@
 extends Control
 @onready var character_btn = $character_box
 @onready var GameMode_btn = $GameMode_box
-@onready var tp_map_box = $tp_map_box
-@onready var ol_map_box: GridContainer = $ol_map_box
 @onready var sub_viewport: SubViewport = $SubViewport
-@onready var ss_map_box: GridContainer = $ss_map_box
+@onready var mapbox: GridContainer = $mapbox
+@onready var tp_map_box: GridContainer = $mapbox/tp_map_box
+@onready var ss_map_box: GridContainer = $mapbox/ss_map_box
+@onready var ac_map_box: GridContainer = $mapbox/ac_map_box
+@onready var ol_map_box: GridContainer = $mapbox/ol_map_box
+
 
 func _ready() -> void:
 	var character3Dtex = $SubViewport.get_texture()
 	$character3D.texture = character3Dtex
 	Global.Gamemode = Global.OverLook
-	Global.Map = ol_map_box.get_children()[0].map_name
+	Global.Map = "overlook_map_1"
 	Global.Character = "Suzanne_001"
 	#print(Global.Map)
 func btn_tools(btn,i:int):
@@ -38,6 +41,12 @@ func start_game_thirdperson():
 func start_game_sidescrolling():
 	map_sel(ss_map_box)
 	get_tree().call_deferred("change_scene_to_file","res://game/game_sidescrolling.tscn")
+	
+func start_game_AnimalCrossing():
+	map_sel(ac_map_box)
+	get_tree().call_deferred("change_scene_to_file","res://game/game_AnimalCrossing.tscn")
+
+
 func _on_character_1_pressed():
 	btn_tools(character_btn,0)
 	Global.Character = "Suzanne_001"
@@ -63,41 +72,41 @@ func _on_button_pressed():
 		return
 	if Global.Gamemode == Global.SideScrolling:
 		start_game_sidescrolling()
-	#print(character)
+		return
+	if Global.Gamemode == Global.AnimalCrossing:
+		start_game_AnimalCrossing()
+		return
 func _on_button_2_pressed():
 	get_tree().quit()
 
+func mapq():
+	var mapuic = mapbox.get_children()
+	for obj in mapuic:
+		obj.visible = false
+	print(Global.Gamemode)
+	mapuic[Global.Gamemode].visible = true
 
 func _on_game_mode_1_pressed() -> void:
-	print("aaa")
 	btn_tools(GameMode_btn,0)
 	Global.Gamemode = Global.OverLook
-	tp_map_box.visible = false
-	ol_map_box.visible = true
-	ss_map_box.visible = false
+	mapq()
 
 func _on_game_mode_2_pressed() -> void:
-	print("aaa")
 	btn_tools(GameMode_btn,1)
 	Global.Gamemode = Global.TridPerson
-	tp_map_box.visible = true
-	ol_map_box.visible = false
-	ss_map_box.visible = false
+	mapq()
 
 func _on_game_mode_3_pressed() -> void:
-	print("aaa")
 	btn_tools(GameMode_btn,2)
 	Global.Gamemode = Global.SideScrolling
-	tp_map_box.visible = false
-	ol_map_box.visible = false
-	ss_map_box.visible = true
+	mapq()
 
+func _on_game_mode_4_pressed() -> void:
+	btn_tools(GameMode_btn,3)
+	Global.Gamemode = Global.AnimalCrossing
+	mapq()
 func _on_map_1_pressed() -> void:
 	btn_tools(tp_map_box,0)
-
-
 func _on_map_2_pressed() -> void:
 	btn_tools(tp_map_box,1)
-
-
 

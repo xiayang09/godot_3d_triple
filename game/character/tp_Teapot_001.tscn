@@ -16,7 +16,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 
 [node name="Skeleton3D" parent="RIG-Ball" instance=ExtResource("2_gmr1n")]
 bones/0/position = Vector3(1.19209e-07, 0.446025, -5.2108e-15)
-bones/0/rotation = Quaternion(-0.5, 0.5, 0.5, 0.5)
 bones/0/scale = Vector3(1.05879, 1.05879, 0.89205)
 
 [node name="Teapot" parent="RIG-Ball" groups=["PLAYER_MESH"] instance=ExtResource("3_pvu3o")]

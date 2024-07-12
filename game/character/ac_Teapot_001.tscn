@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://ko31q2x1cdue"]
+
+[ext_resource type="Script" path="res://script/character_skin.gd" id="1_dmkc5"]
+[ext_resource type="PackedScene" uid="uid://cka7274xxnvlk" path="res://asset/character/ani/ani_ball_001_skin.tscn" id="2_41nmf"]
+[ext_resource type="PackedScene" uid="uid://d1l4ayke1u7pe" path="res://asset/character/model/SM_Teapot.tscn" id="3_xgorw"]
+[ext_resource type="Material" uid="uid://c23v1wq440vjw" path="res://asset/character/mat/M_ac_jin.tres" id="4_eaixa"]
+[ext_resource type="PackedScene" uid="uid://cgl43cu4bb0k4" path="res://asset/character/ani/ani_ball_001_action.tscn" id="5_lxum0"]
+[ext_resource type="PackedScene" uid="uid://d30vxvfloxw5r" path="res://asset/character/ani/ani_ball_001_tree.tscn" id="6_b3hki"]
+[ext_resource type="AudioStream" uid="uid://bjqrirfmttuby" path="res://asset/sound/character/jump2.mp3" id="7_qd5cc"]
+
+[node name="ac_Teapot_001" type="Node3D"]
+script = ExtResource("1_dmkc5")
+
+[node name="RIG-Ball" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="RIG-Ball" instance=ExtResource("2_41nmf")]
+bones/0/position = Vector3(1.19209e-07, 0.44471, -5.2108e-15)
+bones/0/rotation = Quaternion(-0.5, 0.5, 0.5, 0.5)
+bones/0/scale = Vector3(1.06035, 1.06035, 0.889419)
+
+[node name="Teapot" parent="RIG-Ball" groups=["PLAYER_MESH"] instance=ExtResource("3_xgorw")]
+skeleton = NodePath("../Skeleton3D")
+surface_material_override/0 = ExtResource("4_eaixa")
+
+[node name="AnimationPlayer" parent="." instance=ExtResource("5_lxum0")]
+
+[node name="AnimationTree" parent="." instance=ExtResource("6_b3hki")]
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_qd5cc")
+bus = &"SFX"

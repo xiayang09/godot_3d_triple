@@ -5,14 +5,14 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_xbcc5")
-shader_parameter/albedo = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/point_size = null
 shader_parameter/roughness = null
 shader_parameter/specular = null
 shader_parameter/metallic = null
 shader_parameter/uv1_scale = Vector2(1, 1)
 shader_parameter/uv1_offset = Vector2(0, 0)
-shader_parameter/CURVATURE = null
+shader_parameter/CURVATURE = 2.0
 shader_parameter/CURVATURE_ACTIVE = null
-shader_parameter/CURVATURE_DISTANCE = null
+shader_parameter/CURVATURE_DISTANCE = 2.0
 shader_parameter/SPRITE_POS_Y = null

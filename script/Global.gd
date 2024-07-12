@@ -1,6 +1,6 @@
 extends Node3D
 enum {
-	OverLook,TridPerson,SideScrolling
+	OverLook,TridPerson,SideScrolling,AnimalCrossing
 }
 enum Bus{Master ,Music, SFX}
 @onready var GamePauseState := false
@@ -31,19 +31,22 @@ func change_character(player,skin):
 		skin = "tp_"+ skin
 	if Global.Gamemode == Global.SideScrolling:
 		skin = "ol_"+ skin
+	if Global.Gamemode == Global.AnimalCrossing:
+		skin = "ac_"+ skin
+	print(skin)
 	var characterpath = "res://game/character/{str}.tscn"
 	var character_skin = load(characterpath.format({"str":skin})).instantiate()
 	characterRotationRoot.add_child(character_skin)
 	player.character_skin = character_skin
-	if Global.Gamemode == Global.SideScrolling:
+	if Global.Gamemode == Global.SideScrolling or Global.AnimalCrossing:
 		character_skin.rotation = Vector3(0,-1.570797,0)
-func load_map(map,map_box,mode:int = 0):
+func load_map(map,map_box,mapmode:int = 0):
 	var mappath = "res://game/map/{str}.tscn"
 	var map_s = load(mappath.format({"str":map}))
-	if mode ==0 or mode ==2:
+	if mapmode ==Global.OverLook or mapmode == Global.SideScrolling or mapmode == Global.AnimalCrossing:
 		var map_in = map_s.instantiate()
 		map_box.add_child(map_in)
-	elif mode == 1: 
+	elif mapmode == 1: 
 		var map_q = map_s.instantiate()
 		Map_size = map_q.map_size
 		if Map_size == Vector3.ZERO:
