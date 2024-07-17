@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d3ysovl2kgeo4"]
+[gd_scene load_steps=12 format=3 uid="uid://d3ysovl2kgeo4"]
 
 [ext_resource type="Theme" uid="uid://1ufiqhcbexv4" path="res://asset/UI/theme/base_theme.tres" id="1_f3lp8"]
 [ext_resource type="Script" path="res://script/StartGame.gd" id="2_01402"]
@@ -20,6 +20,9 @@ background_mode = 2
 sky = SubResource("Sky_jmuqp")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_s8q8n"]
+viewport_path = NodePath("SubViewport")
 
 [node name="Startgame" type="Control"]
 process_mode = 3
@@ -267,7 +270,7 @@ expand_mode = 1
 
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
-size = Vector2i(800, 800)
+size = Vector2i(400, 400)
 
 [node name="Node3D" type="Node3D" parent="SubViewport"]
 
@@ -287,9 +290,10 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport"]
-transform = Transform3D(-0.939693, 0.0593912, -0.336824, 0, 0.984808, 0.173648, 0.34202, 0.163176, -0.925417, -1.544, 1.173, -3.436)
+transform = Transform3D(-0.939693, 0.0593912, -0.336824, 0, 0.984808, 0.173648, 0.34202, 0.163176, -0.925417, -0.764, 0.863, -1.711)
 fov = 45.0
 size = 2.5
+near = 0.001
 
 [node name="character3D" type="TextureRect" parent="."]
 layout_mode = 1
@@ -298,12 +302,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -370.0
-offset_top = -422.0
-offset_right = -5.0
-offset_bottom = -9.0
+offset_left = -636.0
+offset_top = -568.0
+offset_right = -236.0
+offset_bottom = -168.0
 grow_horizontal = 0
 grow_vertical = 0
+texture = SubResource("ViewportTexture_s8q8n")
 
 [connection signal="pressed" from="character_box/character1" to="." method="_on_character_1_pressed"]
 [connection signal="pressed" from="character_box/character2" to="." method="_on_character_2_pressed"]

@@ -31,6 +31,8 @@ func _physics_process(delta):
 	elif Overlook_mode ==MODE.WASD:	
 		var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 		direction = Vector3(input_dir.x,0,input_dir.y)
+		if Global.Chatshow:
+			direction = Vector3(0,0,0)
 
 	move_and_slide()
 func mouse_move():

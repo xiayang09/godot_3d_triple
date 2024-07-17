@@ -10,8 +10,8 @@ extends Control
 
 
 func _ready() -> void:
-	var character3Dtex = $SubViewport.get_texture()
-	$character3D.texture = character3Dtex
+	#var character3Dtex = $SubViewport.get_texture()
+	#$character3D.texture = character3Dtex
 	Global.Gamemode = Global.OverLook
 	Global.Map = "overlook_map_1"
 	Global.Character = "Suzanne_001"

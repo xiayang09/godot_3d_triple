@@ -77,11 +77,13 @@ func _on_check_button_2_toggled(toggled_on: bool) -> void:
 	var tween =get_tree().create_tween().set_parallel(true)
 	var cam = player.get_node("CameraArm")
 	var camspeed:float = 0.5
-	if !toggled_on:
-		var x = deg_to_rad(-35)
+	if toggled_on:
+		var x = deg_to_rad(-40)
 		tween.tween_property(cam,"rotation",Vector3(x,0,0),camspeed)
-		tween.tween_property(cam,"spring_length",5,camspeed)
+		tween.tween_property(cam,"spring_length",4,camspeed)
+		tween.tween_property(cam,"position",Vector3(0,0.5,0),camspeed)
 	else :
-		var x = deg_to_rad(-55)
+		var x = deg_to_rad(-60)
 		tween.tween_property(cam,"rotation",Vector3(x,0,0),camspeed)
-		tween.tween_property(cam,"spring_length",7,camspeed)
+		tween.tween_property(cam,"position",Vector3(0,0,0),camspeed)
+		tween.tween_property(cam,"spring_length",6,camspeed)

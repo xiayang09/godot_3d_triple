@@ -6,10 +6,11 @@ enum Bus{Master ,Music, SFX}
 @onready var GamePauseState := false
 @onready var ButtonEnter = false
 @onready var Gamemode:int
-
+@onready var Chatshow = false
 @onready var Map_size:Vector3
 @onready var Map:String
 @onready var Character:String
+@onready var PlayerName:String = "Suzanne"
 func _ready() -> void:
 	set_volume(1 ,0.1)
 	set_volume(2 ,0.16)
@@ -21,6 +22,7 @@ func set_volume(bus_index:int,v:float)->void:
 	var db: = linear_to_db(v)
 	AudioServer.set_bus_volume_db(bus_index,db) 
 func change_character(player,skin):
+	PlayerName = skin
 	var characterRotationRoot = player.get_node("characterRotationRoot")
 	var c = characterRotationRoot.get_children()
 	for obj in c:
@@ -38,7 +40,7 @@ func change_character(player,skin):
 	var character_skin = load(characterpath.format({"str":skin})).instantiate()
 	characterRotationRoot.add_child(character_skin)
 	player.character_skin = character_skin
-	if Global.Gamemode == Global.SideScrolling or Global.AnimalCrossing:
+	if Global.Gamemode == Global.SideScrolling or Global.Gamemode==Global.AnimalCrossing:
 		character_skin.rotation = Vector3(0,-1.570797,0)
 func load_map(map,map_box,mapmode:int = 0):
 	var mappath = "res://game/map/{str}.tscn"

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cm8xbwqtltkcf"]
+
+[node name="RichTextLabel" type="RichTextLabel"]
+theme_override_font_sizes/normal_font_size = 20
+text = "零九：我来了阿斯顿阿斯顿"
+fit_content = true

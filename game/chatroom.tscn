@@ -1,0 +1,89 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3vc3t57sgu1y"]
+
+[ext_resource type="Theme" uid="uid://1ufiqhcbexv4" path="res://asset/UI/theme/base_theme.tres" id="1_n33ub"]
+[ext_resource type="Script" path="res://script/chatroom.gd" id="1_of3vi"]
+[ext_resource type="PackedScene" uid="uid://cm8xbwqtltkcf" path="res://game/chatRoomTextLine.tscn" id="3_iu3cs"]
+
+[node name="chatroom" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -270.0
+offset_right = 500.0
+grow_vertical = 0
+theme = ExtResource("1_n33ub")
+script = ExtResource("1_of3vi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = -269.0
+offset_right = 498.0
+offset_bottom = -49.0
+grow_vertical = 0
+color = Color(0, 0, 0, 0.12549)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = -259.0
+offset_right = 488.0
+offset_bottom = -59.0
+grow_vertical = 0
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="chatbox" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+
+[node name="RichTextLabel" parent="ScrollContainer/chatbox" instance=ExtResource("3_iu3cs")]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+text = "欢迎信息：这是一条欢迎信息"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = -44.0
+offset_right = 433.0
+offset_bottom = -11.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+placeholder_text = "聊天框"
+clear_button_enabled = true
+
+[node name="Button" type="Button" parent="LineEdit"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -33.0
+offset_right = 65.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "发送"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="pressed" from="LineEdit/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

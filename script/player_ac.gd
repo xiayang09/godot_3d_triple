@@ -15,8 +15,10 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	#var _rotation:Quaternion = Quaternion.from_euler(Vector3(0,camera_arm.transform.basis.get_euler().y,0))
 	direction = Vector3(input_dir.x,0,input_dir.y).normalized()
+	if Global.Chatshow:
+		direction =Vector3(0,0,0)
 	move_and_slide()
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("jump") and is_on_floor():
+	if event.is_action_pressed("jump") and is_on_floor() and !Global.Chatshow:
 		state_machine.change_state("Jump")

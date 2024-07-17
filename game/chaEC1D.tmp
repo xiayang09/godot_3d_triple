@@ -1,0 +1,97 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3vc3t57sgu1y"]
+
+[ext_resource type="PackedScene" uid="uid://cm8xbwqtltkcf" path="res://game/chatRoomTextLine.tscn" id="1_n0sq2"]
+[ext_resource type="Theme" uid="uid://1ufiqhcbexv4" path="res://asset/UI/theme/base_theme.tres" id="1_n33ub"]
+[ext_resource type="Script" path="res://script/chatroom.gd" id="1_of3vi"]
+
+[node name="chatroom" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_n33ub")
+script = ExtResource("1_of3vi")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = -288.0
+offset_right = 501.0
+offset_bottom = -68.0
+grow_vertical = 0
+follow_focus = true
+scroll_vertical = 95
+horizontal_scroll_mode = 0
+
+[node name="chatbox" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" parent="ScrollContainer/chatbox" instance=ExtResource("1_n0sq2")]
+layout_mode = 2
+
+[node name="RichTextLabel2" parent="ScrollContainer/chatbox" instance=ExtResource("1_n0sq2")]
+layout_mode = 2
+
+[node name="RichTextLabel3" parent="ScrollContainer/chatbox" instance=ExtResource("1_n0sq2")]
+layout_mode = 2
+
+[node name="RichTextLabel4" parent="ScrollContainer/chatbox" instance=ExtResource("1_n0sq2")]
+layout_mode = 2
+
+[node name="RichTextLabel5" parent="ScrollContainer/chatbox" instance=ExtResource("1_n0sq2")]
+layout_mode = 2
+
+[node name="RichTextLabel6" parent="ScrollContainer/chatbox" instance=ExtResource("1_n0sq2")]
+layout_mode = 2
+
+[node name="RichTextLabel7" parent="ScrollContainer/chatbox" instance=ExtResource("1_n0sq2")]
+layout_mode = 2
+
+[node name="RichTextLabel8" parent="ScrollContainer/chatbox" instance=ExtResource("1_n0sq2")]
+layout_mode = 2
+
+[node name="RichTextLabel9" parent="ScrollContainer/chatbox" instance=ExtResource("1_n0sq2")]
+layout_mode = 2
+
+[node name="RichTextLabel10" parent="ScrollContainer/chatbox" instance=ExtResource("1_n0sq2")]
+layout_mode = 2
+
+[node name="RichTextLabel11" parent="ScrollContainer/chatbox" instance=ExtResource("1_n0sq2")]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = -44.0
+offset_right = 437.0
+offset_bottom = -11.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+placeholder_text = "聊天框"
+
+[node name="Button" type="Button" parent="LineEdit"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -33.0
+offset_right = 65.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "发送"
+
+[connection signal="pressed" from="LineEdit/Button" to="." method="_on_button_pressed"]

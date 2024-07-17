@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cettvuwqa0yrq"]
+[gd_scene load_steps=9 format=3 uid="uid://cettvuwqa0yrq"]
 
 [ext_resource type="Script" path="res://script/game_ss.gd" id="1_57rxe"]
 [ext_resource type="PackedScene" uid="uid://d1dx2mu0jwh4l" path="res://game/player_ss.tscn" id="2_2fob0"]
 [ext_resource type="PackedScene" uid="uid://cddrbnno68635" path="res://game/game_thirdperson_UI.tscn" id="3_ehj4l"]
+[ext_resource type="PackedScene" uid="uid://b3vc3t57sgu1y" path="res://game/chatroom.tscn" id="3_ukbcp"]
 [ext_resource type="Script" path="res://script/UI/game_sidescrolling_UI.gd" id="4_xu88g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ghs51"]
@@ -25,6 +26,8 @@ player = NodePath("player_ss")
 [node name="player_ss" parent="." instance=ExtResource("2_2fob0")]
 
 [node name="map_box" type="Node3D" parent="."]
+
+[node name="chatroom" parent="." instance=ExtResource("3_ukbcp")]
 
 [node name="game_thirdperson_UI" parent="." node_paths=PackedStringArray("player", "Mapbox") instance=ExtResource("3_ehj4l")]
 script = ExtResource("4_xu88g")

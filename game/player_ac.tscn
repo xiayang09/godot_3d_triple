@@ -27,13 +27,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("CapsuleShape3D_4wri1")
 
 [node name="CameraArm" type="SpringArm3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.788011, 0.615662, 0, -0.615662, 0.788011, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866026, 0, -0.866026, 0.5, 0, 0, 0)
 collision_mask = 0
-spring_length = 5.0
+spring_length = 6.0
 margin = 0.1
 
 [node name="Camera3D" type="Camera3D" parent="CameraArm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 far = 1000.0
 
 [node name="StateMachine" type="Node3D" parent="." node_paths=PackedStringArray("current_state")]

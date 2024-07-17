@@ -28,26 +28,29 @@ offset_left = 29.0
 offset_top = 22.0
 offset_right = 109.0
 offset_bottom = 62.0
-theme = ExtResource("1_mfi12")
+theme_override_font_sizes/font_size = 20
 text = " 菜单(ESC) "
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GameScreen"]
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 30.935
-offset_top = -70.01
-offset_right = 304.935
-offset_bottom = -28.01
+offset_left = -203.0
+offset_top = -42.0
+grow_horizontal = 0
 grow_vertical = 0
 
 [node name="Label" type="Label" parent="GameScreen/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "移动方式："
 
 [node name="Label2" type="Label" parent="GameScreen/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "鼠标左键"
 
 [node name="PauseScreen" type="Control" parent="."]
@@ -120,7 +123,6 @@ layout_mode = 2
 [node name="moveMethod" type="OptionButton" parent="PauseScreen/box/set"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 35
 item_count = 3
 selected = 0
 popup/item_0/text = "鼠标左键"

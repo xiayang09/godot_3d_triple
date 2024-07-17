@@ -20,9 +20,11 @@ func _physics_process(delta):
 		self.position.x = -playerpos.x
 	if abs(playerpos.z) > Global.Map_size.z/2:
 		self.position.z = -playerpos.z
+	if Global.Chatshow:
+		direction = Vector3(0,0,0)
 	move_and_slide()
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("jump") and is_on_floor():
+	if event.is_action_pressed("jump") and is_on_floor() and !Global.Chatshow:
 		state_machine.change_state("Jump")
 		#character_skin.Call("test")

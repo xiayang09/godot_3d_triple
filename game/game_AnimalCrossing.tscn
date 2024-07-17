@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1ev2swyr7uvc"]
+[gd_scene load_steps=6 format=3 uid="uid://d1ev2swyr7uvc"]
 
 [ext_resource type="Script" path="res://script/game_ss.gd" id="1_iq1ey"]
 [ext_resource type="PackedScene" uid="uid://613tou0qrai4" path="res://game/player_ac.tscn" id="2_vbg86"]
 [ext_resource type="PackedScene" uid="uid://11e52ljernnq" path="res://game/game_AnimalCrossing_UI.tscn" id="3_osqmt"]
+[ext_resource type="PackedScene" uid="uid://b3vc3t57sgu1y" path="res://game/chatroom.tscn" id="4_n2qwm"]
 [ext_resource type="PackedScene" uid="uid://ce7rv8m5mvahs" path="res://game/environment.tscn" id="5_q7kfe"]
 
 [node name="game_AnimalCrossing" type="Node3D" node_paths=PackedStringArray("player")]
@@ -16,6 +17,8 @@ player = NodePath("player_ac")
 [node name="game_AnimalCrossing_UI" parent="." node_paths=PackedStringArray("player", "Mapbox") instance=ExtResource("3_osqmt")]
 player = NodePath("../player_ac")
 Mapbox = NodePath("../map_box")
+
+[node name="chatroom" parent="." instance=ExtResource("4_n2qwm")]
 
 [node name="Environment" parent="." instance=ExtResource("5_q7kfe")]
 
