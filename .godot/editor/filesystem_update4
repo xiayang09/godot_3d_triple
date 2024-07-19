@@ -1,4 +1,5 @@
 res://game/item/door.tscn
+res://asset/item/mat/M_door_light_GREEN.tres
 res://script/chatroom.gd
 res://script/player_ol.gd
 res://asset/character/mat/M_ol_Ball_001.tres
@@ -7,15 +8,4 @@ res://shader/CURVATURE.gdshader
 res://change_Mat_Demo.gdshader
 res://shader/Ball_001.tres
 res://shader/CURVATURE_z.gdshader
-res://game/game_sidescrolling_UI.tscn
 res://game/map/overlook_map_1.tscn
-res://game/game_overlook_UI.tscn
-res://asset/character/model/SM_Suzanne.tscn
-res://script/item/door.gd
-res://game/player_ol.tscn
-res://script/Global.gd
-res://game/game_overlook.tscn
-res://script/game_ol.gd
-res://asset/character/mat/M_tp_jin.tres
-res://game/game_thirdperson.tscn
-res://game/game_thirdperson_UI.tscn
