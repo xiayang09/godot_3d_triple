@@ -1,5 +1,9 @@
-LineEdit
+MeshInstance3D
+StaticBody3D
+Area3D
+CollisionShape3D
 Timer
+LineEdit
 ColorRect
 Panel
 Button
@@ -9,6 +13,3 @@ ScrollContainer
 ReferenceRect
 VScrollBar
 HBoxContainer
-Control
-TextEdit
-GridContainer

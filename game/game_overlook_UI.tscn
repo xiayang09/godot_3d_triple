@@ -51,7 +51,30 @@ text = "移动方式："
 [node name="Label2" type="Label" parent="GameScreen/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "鼠标左键"
+text = "WASD"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="GameScreen"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -203.0
+offset_top = -82.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="GameScreen/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "交互按键："
+
+[node name="Label2" type="Label" parent="GameScreen/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "E"
 
 [node name="PauseScreen" type="Control" parent="."]
 visible = false
@@ -124,7 +147,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 item_count = 3
-selected = 0
+selected = 2
 popup/item_0/text = "鼠标左键"
 popup/item_0/id = 0
 popup/item_1/text = "鼠标右键"

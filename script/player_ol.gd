@@ -9,7 +9,7 @@ var mouse_click_target = Vector3()
 enum MODE{
 	MOUSELEFT,MOUSERIGHT,WASD
 }
-@onready var Overlook_mode:= MODE.MOUSELEFT
+@onready var Overlook_mode:= MODE.WASD
 
 func _ready():
 	Overlook_mode = main_ui.get_node("PauseScreen/box/set/moveMethod").selected

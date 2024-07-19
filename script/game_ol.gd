@@ -4,6 +4,7 @@ extends Node3D
 func _ready():
 		Global.load_map(Global.Map,map_box,Global.Gamemode)
 		Global.change_character(player,Global.Character)
+		Global.player = player
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

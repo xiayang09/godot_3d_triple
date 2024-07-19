@@ -9,6 +9,7 @@ enum Bus{Master ,Music, SFX}
 @onready var Chatshow = false
 @onready var Map_size:Vector3
 @onready var Map:String
+@onready var player:CharacterBody3D
 @onready var Character:String
 @onready var PlayerName:String = "Suzanne"
 func _ready() -> void:
