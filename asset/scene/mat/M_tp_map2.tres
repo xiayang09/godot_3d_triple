@@ -7,6 +7,8 @@
 render_priority = 0
 shader = ExtResource("1_kib8l")
 shader_parameter/albedo = Color(0.18359, 0.18359, 0.18359, 1)
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_multiplier = null
 shader_parameter/point_size = null
 shader_parameter/roughness = 0.941
 shader_parameter/specular = 0.3
@@ -14,7 +16,7 @@ shader_parameter/metallic = 0.0
 shader_parameter/uv1_scale = Vector2(1, 1)
 shader_parameter/uv1_offset = Vector2(0, 0)
 shader_parameter/CURVATURE = 2.0
-shader_parameter/CURVATURE_ACTIVE = true
+shader_parameter/CURVATURE_ACTIVE = false
 shader_parameter/CURVATURE_DISTANCE = 2.0
 shader_parameter/SPRITE_POS_Y = -0.01
 shader_parameter/texture_albedo = ExtResource("2_7quen")

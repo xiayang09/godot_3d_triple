@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://f7l415vu01t2" path="res://game/player_ol.tscn" id="1_gxj7a"]
 [ext_resource type="Script" path="res://script/game_ol.gd" id="1_mba8h"]
-[ext_resource type="PackedScene" uid="uid://4dmjvu6yutej" path="res://game/game_overlook_UI.tscn" id="2_v4kej"]
-[ext_resource type="PackedScene" uid="uid://d3tajw1xj2aw2" path="res://game/3dui.tscn" id="3_7h0ta"]
-[ext_resource type="PackedScene" uid="uid://b3vc3t57sgu1y" path="res://game/chatroom.tscn" id="4_dpiyp"]
+[ext_resource type="PackedScene" uid="uid://4dmjvu6yutej" path="res://game/UI/game_overlook_UI.tscn" id="2_v4kej"]
+[ext_resource type="PackedScene" uid="uid://d3tajw1xj2aw2" path="res://game/UI/3dui.tscn" id="3_7h0ta"]
+[ext_resource type="PackedScene" uid="uid://b3vc3t57sgu1y" path="res://game/UI/chatroom.tscn" id="4_dpiyp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qrwe6"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

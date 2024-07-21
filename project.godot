@@ -18,17 +18,18 @@ config/icon="res://asset/UI/logo.png"
 
 [audio]
 
-buses/default_bus_layout="res://script/default_bus_layout.tres"
+buses/default_bus_layout="res://game/setup/default_bus_layout.tres"
 
 [autoload]
 
 Global="*res://script/Global.gd"
-Bgm="*res://game/bgm.tscn"
+Bgm="*res://game/setup/bgm.tscn"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=2
 
 [filesystem]
 

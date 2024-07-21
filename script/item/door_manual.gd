@@ -1,14 +1,15 @@
 extends Node3D
 @onready var animation_player: AnimationPlayer = $door/AnimationPlayer
-@onready var light: MeshInstance3D = $door/light
 @onready var animation_collision: AnimationPlayer = $door/AnimationCollision
 @export var AutomaticDoor :bool = false
-const M_DOOR_LIGHT_GREEN = preload("res://asset/item/mat/M_door_light_GREEN.tres")
-const M_DOOR_LIGHT_RED = preload("res://asset/item/mat/M_door_light_RED.tres")
+@onready var door_light: Node3D = $door/door_light
+
 
 var Neardoor = false
 var DoorIsOpen = false
 var AimIsDone = true
+func _ready() -> void:
+	pass
 func open():
 	animation_player.play("open")
 	animation_collision.play("open")
@@ -28,15 +29,16 @@ func _input(event: InputEvent) -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body == Global.player:
 		Neardoor = true
-		#light.get_active_material(0).emission = "00ff11" 
-		light.set_surface_override_material(0,M_DOOR_LIGHT_GREEN)
+
+		door_light.get_node("door_light_off").visible = false
+		door_light.get_node("door_light_on").visible = true
 		if AutomaticDoor:
 			open()
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body == Global.player:
-		#light.get_active_material(0).emission = "ff0004"
-		light.set_surface_override_material(0,M_DOOR_LIGHT_RED)
+		door_light.get_node("door_light_on").visible = false
+		door_light.get_node("door_light_off").visible = true
 		if DoorIsOpen:
 			close()
 		Neardoor = false

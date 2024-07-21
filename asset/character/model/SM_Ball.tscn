@@ -29,6 +29,7 @@ bind/0/bone = -1
 bind/0/pose = Transform3D(-4.37114e-08, 0, -1, -1, 0, 1.19209e-07, 0, 1, 0, 0, 0, -0.5)
 
 [node name="Ball" type="MeshInstance3D"]
+layers = 257
 mesh = SubResource("ArrayMesh_qr62n")
 skin = SubResource("Skin_3j2p6")
 skeleton = NodePath("")

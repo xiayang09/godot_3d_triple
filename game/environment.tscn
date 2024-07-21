@@ -15,10 +15,12 @@ sky_material = SubResource("ProceduralSkyMaterial_dnwrk")
 background_mode = 2
 sky = SubResource("Sky_uyqdr")
 tonemap_mode = 2
+ssao_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
 fog_enabled = true
 fog_light_color = Color(0.409629, 0.553296, 0.625784, 1)
+adjustment_enabled = true
 
 [node name="Environment" type="Node3D"]
 
@@ -26,8 +28,9 @@ fog_light_color = Color(0.409629, 0.553296, 0.625784, 1)
 environment = SubResource("Environment_25kld")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.999999, 0.000986569, 0.00120064, -0.00119931, -0.00135217, 0.999998, 0.000988191, -0.999999, -0.00135098, 0, 4.53147, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 shadow_enabled = true
 directional_shadow_fade_start = 0.946
 directional_shadow_max_distance = 54.2
 directional_shadow_pancake_size = 0.0
+sky_mode = 1

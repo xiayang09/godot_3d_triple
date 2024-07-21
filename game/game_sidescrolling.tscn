@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" path="res://script/game_ss.gd" id="1_57rxe"]
 [ext_resource type="PackedScene" uid="uid://d1dx2mu0jwh4l" path="res://game/player_ss.tscn" id="2_2fob0"]
-[ext_resource type="PackedScene" uid="uid://cddrbnno68635" path="res://game/game_thirdperson_UI.tscn" id="3_ehj4l"]
-[ext_resource type="PackedScene" uid="uid://b3vc3t57sgu1y" path="res://game/chatroom.tscn" id="3_ukbcp"]
+[ext_resource type="PackedScene" uid="uid://cddrbnno68635" path="res://game/UI/game_thirdperson_UI.tscn" id="3_ehj4l"]
+[ext_resource type="PackedScene" uid="uid://b3vc3t57sgu1y" path="res://game/UI/chatroom.tscn" id="3_ukbcp"]
 [ext_resource type="Script" path="res://script/UI/game_sidescrolling_UI.gd" id="4_xu88g"]
+
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ghs51"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

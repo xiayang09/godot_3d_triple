@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://btkwcbpa6ivq4"]
+
+[ext_resource type="Shader" path="res://shader/CURVATURE.gdshader" id="1_4siyo"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_4siyo")
+shader_parameter/albedo = Color(0.72, 0.72, 0.72, 1)
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_multiplier = null
+shader_parameter/point_size = null
+shader_parameter/roughness = 0.8
+shader_parameter/specular = null
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector2(1, 1)
+shader_parameter/uv1_offset = Vector2(0, 0)
+shader_parameter/CURVATURE = 2.0
+shader_parameter/CURVATURE_ACTIVE = false
+shader_parameter/CURVATURE_DISTANCE = 2.0
+shader_parameter/SPRITE_POS_Y = -0.01

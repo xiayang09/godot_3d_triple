@@ -1,0 +1,207 @@
+[gd_scene load_steps=14 format=3 uid="uid://cua6sj2i35xb1"]
+
+[ext_resource type="Script" path="res://script/item/door_manual.gd" id="1_bnd13"]
+[ext_resource type="Material" uid="uid://dkslihkoqws6i" path="res://asset/item/mat/M_tp_door_light_GREEN.tres" id="2_7fgwm"]
+[ext_resource type="PackedScene" uid="uid://buyl60pc32wxe" path="res://asset/item/model/door.glb" id="2_10h2k"]
+[ext_resource type="Material" uid="uid://doa7peptv6kk1" path="res://asset/item/mat/M_tp_door_light_RED.tres" id="3_f150f"]
+[ext_resource type="Material" uid="uid://btkwcbpa6ivq4" path="res://asset/item/mat/M_tp_door.tres" id="5_rqy7g"]
+[ext_resource type="PackedScene" uid="uid://bw7wwpy373cus" path="res://asset/item/model/door_light.glb" id="6_88ydw"]
+[ext_resource type="PackedScene" uid="uid://bh2tkq04mlr1c" path="res://game/item/tp_door_b.tscn" id="7_i2je8"]
+
+[sub_resource type="Animation" id="Animation_036sa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door_L:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("door_R:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qnasy"]
+resource_name = "close"
+length = 0.433337
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door_L:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.1, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("door_R:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.1, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"Aimstart"
+}, {
+"args": [],
+"method": &"Aimend"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_gum6p"]
+resource_name = "open"
+length = 0.433337
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door_L:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.1, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("door_R:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.1, 0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"Aimstart"
+}, {
+"args": [],
+"method": &"Aimend"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ci6hv"]
+_data = {
+"RESET": SubResource("Animation_036sa"),
+"close": SubResource("Animation_qnasy"),
+"open": SubResource("Animation_gum6p")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wlwuf"]
+size = Vector3(1.7, 3, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bxn7n"]
+size = Vector3(3.4, 3, 4)
+
+[node name="tp_door" type="Node3D"]
+script = ExtResource("1_bnd13")
+
+[node name="door" parent="." instance=ExtResource("2_10h2k")]
+
+[node name="Skeleton3D" parent="door/Armature" index="0"]
+bones/0/rotation = Quaternion(-2.98023e-08, 1.19209e-07, -2.11758e-22, 1)
+bones/1/rotation = Quaternion(-3.55271e-15, 7.10543e-15, -4.23516e-22, 1)
+bones/2/rotation = Quaternion(-3.55271e-15, 7.10543e-15, -4.23516e-22, 1)
+bones/3/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
+
+[node name="Door" parent="door/Armature/Skeleton3D" index="0" groups=["CURVATURE_MESH"]]
+surface_material_override/0 = ExtResource("5_rqy7g")
+
+[node name="AnimationCollision" type="AnimationPlayer" parent="door"]
+libraries = {
+"": SubResource("AnimationLibrary_ci6hv")
+}
+
+[node name="door_L" type="StaticBody3D" parent="door"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="door/door_L"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, 1.5, 0)
+shape = SubResource("BoxShape3D_wlwuf")
+
+[node name="door_R" type="StaticBody3D" parent="door"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="door/door_R"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.875, 1.5, 0)
+shape = SubResource("BoxShape3D_wlwuf")
+
+[node name="Area3D" type="Area3D" parent="door"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="door/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_bxn7n")
+
+[node name="door_light" type="Node3D" parent="door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.661, 0)
+
+[node name="door_light_off" parent="door/door_light" instance=ExtResource("6_88ydw")]
+
+[node name="light" parent="door/door_light/door_light_off" index="0" groups=["CURVATURE_MESH"]]
+transform = Transform3D(1, 0.000706077, -0.00035061, -0.000706028, 1, 0.000152094, 0.000350709, -0.000151865, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("3_f150f")
+
+[node name="door_light_on" parent="door/door_light" instance=ExtResource("6_88ydw")]
+visible = false
+
+[node name="light" parent="door/door_light/door_light_on" index="0" groups=["CURVATURE_MESH"]]
+transform = Transform3D(1, 0.000706077, -0.00035061, -0.000706028, 1, 0.000152094, 0.000350709, -0.000151865, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_7fgwm")
+
+[node name="tp_door_B" parent="." instance=ExtResource("7_i2je8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23685, 0, 0)
+
+[node name="tp_door_B2" parent="." instance=ExtResource("7_i2je8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20381, 0, 0)
+
+[connection signal="body_entered" from="door/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="door/Area3D" to="." method="_on_area_3d_body_exited"]
+
+[editable path="door"]
+[editable path="door/door_light/door_light_off"]
+[editable path="door/door_light/door_light_on"]

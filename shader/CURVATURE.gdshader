@@ -5,6 +5,8 @@ render_mode blend_mix,cull_disabled,diffuse_burley,specular_schlick_ggx,depth_pr
 
 
 uniform vec4 albedo : source_color = vec4(1,1,1,1);
+uniform vec3 emission :source_color = vec3(0,0,0);
+uniform float emission_multiplier : hint_range(1,10);
 uniform sampler2D texture_albedo : source_color,filter_linear_mipmap,repeat_enable;
 uniform sampler2D texture_roughness : hint_roughness_r,filter_linear_mipmap,repeat_enable;
 uniform sampler2D texture_metallic : hint_default_white,filter_linear_mipmap,repeat_enable;
@@ -44,7 +46,8 @@ void fragment() {
 	float roughness_tex = dot(texture(texture_roughness,base_uv),roughness_texture_channel);
 	ROUGHNESS = roughness_tex * roughness;
 	SPECULAR = specular;
+	EMISSION = emission* vec3(emission_multiplier,emission_multiplier,emission_multiplier);
 }
-// you can find the base of this shader in reddit
-// https://www.reddit.com/r/godot/comments/t14wss/3d_world_bend_effect/
-// If you improve this please show me
+//void light() {
+    ////DIFFUSE_LIGHT += clamp(dot(NORMAL, LIGHT), 0.0, 1.0) * ATTENUATION * LIGHT_COLOR;
+//}

@@ -1,12 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://bdn83alg18yo7"]
 
-[ext_resource type="Script" path="res://script/character_skin.gd" id="1_da0o5"]
+[ext_resource type="Script" path="res://script/player/character_skin.gd" id="1_da0o5"]
 [ext_resource type="PackedScene" uid="uid://cka7274xxnvlk" path="res://asset/character/ani/ani_ball_001_skin.tscn" id="2_gmr1n"]
 [ext_resource type="PackedScene" uid="uid://d1l4ayke1u7pe" path="res://asset/character/model/SM_Teapot.tscn" id="3_pvu3o"]
 [ext_resource type="Material" uid="uid://bf2d71e5n63qx" path="res://asset/character/mat/M_tp_jin.tres" id="4_nbtvr"]
 [ext_resource type="PackedScene" uid="uid://cgl43cu4bb0k4" path="res://asset/character/ani/ani_ball_001_action.tscn" id="4_o2at4"]
 [ext_resource type="PackedScene" uid="uid://d30vxvfloxw5r" path="res://asset/character/ani/ani_ball_001_tree.tscn" id="5_ko41p"]
 [ext_resource type="AudioStream" uid="uid://bjqrirfmttuby" path="res://asset/sound/character/jump2.mp3" id="6_a83ca"]
+
 
 [node name="tp_Teapot_001" type="Node3D"]
 script = ExtResource("1_da0o5")

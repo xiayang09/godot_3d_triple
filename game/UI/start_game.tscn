@@ -1,0 +1,325 @@
+[gd_scene load_steps=12 format=3 uid="uid://d3ysovl2kgeo4"]
+
+[ext_resource type="Theme" uid="uid://1ufiqhcbexv4" path="res://asset/UI/theme/base_theme.tres" id="1_f3lp8"]
+[ext_resource type="Script" path="res://script/UI/StartGame.gd" id="2_01402"]
+[ext_resource type="Script" path="res://script/UI/main_ui_map.gd" id="3_dbou0"]
+[ext_resource type="Texture2D" uid="uid://ghm0jea27xdk" path="res://asset/UI/logo.jpg" id="4_q4xbn"]
+[ext_resource type="PackedScene" uid="uid://e14cy3abis02" path="res://game/character/ol_Suzanne_001.tscn" id="5_7b6t1"]
+[ext_resource type="PackedScene" uid="uid://mpo6s30k2spt" path="res://game/character/ol_Ball_001.tscn" id="6_uyfdi"]
+[ext_resource type="PackedScene" uid="uid://biehfkxmpg5yb" path="res://game/character/ol_Teapot_001.tscn" id="7_svjye"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dd6ia"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_jmuqp"]
+sky_material = SubResource("ProceduralSkyMaterial_dd6ia")
+
+[sub_resource type="Environment" id="Environment_yxibs"]
+background_mode = 2
+sky = SubResource("Sky_jmuqp")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_s8q8n"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Startgame" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_f3lp8")
+script = ExtResource("2_01402")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 196.0
+offset_top = -546.0
+offset_right = 421.0
+offset_bottom = -492.0
+grow_vertical = 0
+text = "角色选择："
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 196.0
+offset_top = -474.0
+offset_right = 421.0
+offset_bottom = -420.0
+grow_vertical = 0
+text = "游戏模式："
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 196.0
+offset_top = -396.0
+offset_right = 421.0
+offset_bottom = -342.0
+grow_vertical = 0
+text = "地图选择："
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -680.0
+offset_top = 173.0
+offset_right = 1.0
+offset_bottom = 281.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.557095, 0.794289, 0.638321, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X09_GAME_DEMO"
+
+[node name="character_box" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 372.0
+offset_top = -543.0
+offset_right = 764.0
+offset_bottom = -481.0
+grow_vertical = 0
+columns = 4
+
+[node name="character1" type="Button" parent="character_box"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+button_pressed = true
+text = " 苏珊猴子 "
+
+[node name="character2" type="Button" parent="character_box"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+text = " 圆球 "
+
+[node name="character3" type="Button" parent="character_box"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+text = " 3DSMAX茶壶 "
+
+[node name="GameMode_box" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 372.0
+offset_top = -475.0
+offset_right = 899.0
+offset_bottom = -413.0
+grow_vertical = 0
+columns = 4
+
+[node name="GameMode1" type="Button" parent="GameMode_box"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+button_pressed = true
+text = " 上帝视角 "
+
+[node name="GameMode2" type="Button" parent="GameMode_box"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+text = " 自由视角 "
+
+[node name="GameMode3" type="Button" parent="GameMode_box"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+text = " 横版视角 "
+
+[node name="GameMode4" type="Button" parent="GameMode_box"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+text = "动森视角"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 370.0
+offset_top = -287.0
+offset_right = 558.0
+offset_bottom = -225.0
+grow_vertical = 0
+text = "开始游戏"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 370.0
+offset_top = -198.0
+offset_right = 558.0
+offset_bottom = -136.0
+grow_vertical = 0
+text = "退出游戏"
+
+[node name="mapbox" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 371.0
+offset_top = -401.0
+offset_right = 560.0
+offset_bottom = -346.0
+grow_vertical = 0
+
+[node name="ol_map_box" type="GridContainer" parent="mapbox"]
+layout_mode = 2
+columns = 3
+
+[node name="map1" type="Button" parent="mapbox/ol_map_box"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+button_pressed = true
+text = " 测试地图1 "
+script = ExtResource("3_dbou0")
+map_name = "overlook_map_1"
+
+[node name="tp_map_box" type="GridContainer" parent="mapbox"]
+visible = false
+layout_mode = 2
+columns = 3
+
+[node name="map1" type="Button" parent="mapbox/tp_map_box"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+button_pressed = true
+text = " 平地测试(无限大) "
+script = ExtResource("3_dbou0")
+map_name = "thirdperson_map_1"
+
+[node name="map2" type="Button" parent="mapbox/tp_map_box"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+text = " 山地测试(无限大) "
+script = ExtResource("3_dbou0")
+map_name = "thirdperson_map_shan"
+
+[node name="ss_map_box" type="GridContainer" parent="mapbox"]
+visible = false
+layout_mode = 2
+columns = 3
+
+[node name="map1" type="Button" parent="mapbox/ss_map_box"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+button_pressed = true
+text = " 横板地图1 "
+script = ExtResource("3_dbou0")
+map_name = "sidescrolling_map_1"
+
+[node name="ac_map_box" type="GridContainer" parent="mapbox"]
+visible = false
+layout_mode = 2
+columns = 3
+
+[node name="map1" type="Button" parent="mapbox/ac_map_box"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+button_pressed = true
+text = " 动森地图1 "
+script = ExtResource("3_dbou0")
+map_name = "AnimalCrossing_map_1"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -229.0
+offset_top = 99.0
+offset_right = -103.0
+offset_bottom = 231.0
+grow_horizontal = 0
+texture = ExtResource("4_q4xbn")
+expand_mode = 1
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(400, 400)
+
+[node name="Node3D" type="Node3D" parent="SubViewport"]
+
+[node name="ol_Suzanne_001" parent="SubViewport/Node3D" instance=ExtResource("5_7b6t1")]
+
+[node name="ol_Ball_001" parent="SubViewport/Node3D" instance=ExtResource("6_uyfdi")]
+visible = false
+
+[node name="ol_Teapot_001" parent="SubViewport/Node3D" instance=ExtResource("7_svjye")]
+visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewport"]
+environment = SubResource("Environment_yxibs")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(-0.939693, 0.0593912, -0.336824, 0, 0.984808, 0.173648, 0.34202, 0.163176, -0.925417, -0.764, 0.863, -1.711)
+fov = 45.0
+size = 2.5
+near = 0.001
+
+[node name="character3D" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -636.0
+offset_top = -568.0
+offset_right = -236.0
+offset_bottom = -168.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = SubResource("ViewportTexture_s8q8n")
+
+[connection signal="pressed" from="character_box/character1" to="." method="_on_character_1_pressed"]
+[connection signal="pressed" from="character_box/character2" to="." method="_on_character_2_pressed"]
+[connection signal="pressed" from="character_box/character3" to="." method="_on_character_3_pressed"]
+[connection signal="pressed" from="GameMode_box/GameMode1" to="." method="_on_game_mode_1_pressed"]
+[connection signal="pressed" from="GameMode_box/GameMode2" to="." method="_on_game_mode_2_pressed"]
+[connection signal="pressed" from="GameMode_box/GameMode3" to="." method="_on_game_mode_3_pressed"]
+[connection signal="pressed" from="GameMode_box/GameMode4" to="." method="_on_game_mode_4_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="mapbox/ol_map_box/map1" to="." method="_on_map_1_pressed"]
+[connection signal="pressed" from="mapbox/tp_map_box/map1" to="." method="_on_map_1_pressed"]
+[connection signal="pressed" from="mapbox/tp_map_box/map2" to="." method="_on_map_2_pressed"]
+[connection signal="pressed" from="mapbox/ss_map_box/map1" to="." method="_on_map_1_pressed"]

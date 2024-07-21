@@ -6,6 +6,8 @@
 render_priority = 0
 shader = ExtResource("1_xbcc5")
 shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_multiplier = null
 shader_parameter/point_size = null
 shader_parameter/roughness = null
 shader_parameter/specular = null

@@ -1,12 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://613tou0qrai4"]
 
-[ext_resource type="Script" path="res://script/player_ac.gd" id="1_wgk8o"]
+[ext_resource type="Script" path="res://script/player/player_ac.gd" id="1_wgk8o"]
 [ext_resource type="PackedScene" uid="uid://buejkco7avk6w" path="res://game/character/ac_Suzanne_001.tscn" id="2_63cqe"]
-[ext_resource type="Script" path="res://script/StateMachine/StateMachine.gd" id="3_5xknl"]
-[ext_resource type="Script" path="res://script/StateMachine/ac_Idle.gd" id="3_n2l64"]
-[ext_resource type="Script" path="res://script/StateMachine/ac_Run.gd" id="4_cgvs6"]
-[ext_resource type="Script" path="res://script/StateMachine/ac_Jump.gd" id="5_fcivt"]
-[ext_resource type="Script" path="res://script/StateMachine/ac_Fall.gd" id="6_jci5d"]
+[ext_resource type="Script" path="res://script/player/StateMachine/StateMachine.gd" id="3_5xknl"]
+[ext_resource type="Script" path="res://script/player/StateMachine/ac_Idle.gd" id="3_n2l64"]
+[ext_resource type="Script" path="res://script/player/StateMachine/ac_Run.gd" id="4_cgvs6"]
+[ext_resource type="Script" path="res://script/player/StateMachine/ac_Jump.gd" id="5_fcivt"]
+[ext_resource type="Script" path="res://script/player/StateMachine/ac_Fall.gd" id="6_jci5d"]
+
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4wri1"]
 margin = 0.0

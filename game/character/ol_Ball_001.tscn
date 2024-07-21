@@ -1,11 +1,12 @@
 [gd_scene load_steps=7 format=3 uid="uid://mpo6s30k2spt"]
 
-[ext_resource type="Script" path="res://script/character_skin.gd" id="1_o3b8p"]
+[ext_resource type="Script" path="res://script/player/character_skin.gd" id="1_o3b8p"]
 [ext_resource type="PackedScene" uid="uid://cka7274xxnvlk" path="res://asset/character/ani/ani_ball_001_skin.tscn" id="2_4o21s"]
 [ext_resource type="PackedScene" uid="uid://cgl43cu4bb0k4" path="res://asset/character/ani/ani_ball_001_action.tscn" id="3_b5nwy"]
 [ext_resource type="PackedScene" uid="uid://ic8rnokmmw28" path="res://asset/character/model/SM_Ball.tscn" id="3_eki5b"]
 [ext_resource type="PackedScene" uid="uid://d30vxvfloxw5r" path="res://asset/character/ani/ani_ball_001_tree.tscn" id="4_t1vfe"]
 [ext_resource type="AudioStream" uid="uid://bjqrirfmttuby" path="res://asset/sound/character/jump2.mp3" id="6_x3m3i"]
+
 
 [node name="ol_Ball_001" type="Node3D"]
 script = ExtResource("1_o3b8p")

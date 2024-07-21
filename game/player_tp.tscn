@@ -1,17 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjsmy23qa62ue"]
+[gd_scene load_steps=11 format=3 uid="uid://cjsmy23qa62ue"]
 
-[ext_resource type="Script" path="res://script/player_tp.gd" id="1_kx3si"]
-[ext_resource type="Script" path="res://script/CameraArm_tp.gd" id="2_00a8j"]
+[ext_resource type="Script" path="res://script/player/player_tp.gd" id="1_kx3si"]
+[ext_resource type="Script" path="res://script/player/CameraArm_tp.gd" id="2_00a8j"]
 [ext_resource type="PackedScene" uid="uid://wl5h0aa6jl8u" path="res://game/character/tp_Suzanne_001.tscn" id="2_jjo3c"]
-[ext_resource type="Script" path="res://script/StateMachine/StateMachine.gd" id="3_8acrj"]
-[ext_resource type="Script" path="res://script/StateMachine/tp_Idle.gd" id="4_53khd"]
-[ext_resource type="Script" path="res://script/StateMachine/tp_Run.gd" id="5_m5lft"]
-[ext_resource type="Script" path="res://script/StateMachine/tp_Jump.gd" id="6_m23d2"]
-[ext_resource type="Script" path="res://script/StateMachine/tp_Fall.gd" id="7_cid2r"]
+[ext_resource type="Script" path="res://script/player/StateMachine/StateMachine.gd" id="3_8acrj"]
+[ext_resource type="Script" path="res://script/player/StateMachine/tp_Idle.gd" id="4_53khd"]
+[ext_resource type="Script" path="res://script/player/StateMachine/tp_Run.gd" id="5_m5lft"]
+[ext_resource type="Script" path="res://script/player/StateMachine/tp_Jump.gd" id="6_m23d2"]
+[ext_resource type="Script" path="res://script/player/StateMachine/tp_Fall.gd" id="7_cid2r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4wri1"]
 margin = 0.0
 height = 1.0
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_y256w"]
+dof_blur_far_distance = 50.0
 
 [node name="player_tp" type="CharacterBody3D" node_paths=PackedStringArray("character_skin")]
 script = ExtResource("1_kx3si")
@@ -33,7 +36,7 @@ script = ExtResource("2_00a8j")
 
 [node name="Camera3D" type="Camera3D" parent="CameraArm"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-far = 1000.0
+attributes = SubResource("CameraAttributesPractical_y256w")
 
 [node name="StateMachine" type="Node3D" parent="." node_paths=PackedStringArray("current_state")]
 script = ExtResource("3_8acrj")

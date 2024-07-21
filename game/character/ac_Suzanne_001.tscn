@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://buejkco7avk6w"]
 
-[ext_resource type="Script" path="res://script/character_skin.gd" id="1_jcml3"]
+[ext_resource type="Script" path="res://script/player/character_skin.gd" id="1_jcml3"]
 [ext_resource type="PackedScene" uid="uid://cka7274xxnvlk" path="res://asset/character/ani/ani_ball_001_skin.tscn" id="2_225tk"]
 [ext_resource type="PackedScene" uid="uid://b8jsv275bu1sj" path="res://asset/character/model/SM_Suzanne.tscn" id="3_7iuc5"]
 [ext_resource type="Material" uid="uid://c23v1wq440vjw" path="res://asset/character/mat/M_ac_jin.tres" id="4_cwpv5"]
@@ -15,8 +15,9 @@ script = ExtResource("1_jcml3")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0.284901)
 
 [node name="Skeleton3D" parent="RIG-Ball" instance=ExtResource("2_225tk")]
-bones/0/position = Vector3(1.19209e-07, 0.44308, -5.2108e-15)
-bones/0/scale = Vector3(1.06241, 1.06241, 0.885955)
+bones/0/position = Vector3(1.19209e-07, 0.499043, -5.2108e-15)
+bones/0/rotation = Quaternion(-0.5, 0.5, 0.5, 0.5)
+bones/0/scale = Vector3(1.00094, 1.00094, 0.998129)
 
 [node name="Suzanne" parent="RIG-Ball" groups=["PLAYER_MESH"] instance=ExtResource("3_7iuc5")]
 skeleton = NodePath("../Skeleton3D")
