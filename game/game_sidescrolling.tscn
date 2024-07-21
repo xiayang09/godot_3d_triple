@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://b3vc3t57sgu1y" path="res://game/UI/chatroom.tscn" id="3_ukbcp"]
 [ext_resource type="Script" path="res://script/UI/game_sidescrolling_UI.gd" id="4_xu88g"]
 
-
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ghs51"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -28,12 +27,12 @@ player = NodePath("player_ss")
 
 [node name="map_box" type="Node3D" parent="."]
 
-[node name="chatroom" parent="." instance=ExtResource("3_ukbcp")]
-
 [node name="game_thirdperson_UI" parent="." node_paths=PackedStringArray("player", "Mapbox") instance=ExtResource("3_ehj4l")]
 script = ExtResource("4_xu88g")
 player = NodePath("../player_ss")
 Mapbox = NodePath("../map_box")
+
+[node name="chatroom" parent="." instance=ExtResource("3_ukbcp")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_riur6")

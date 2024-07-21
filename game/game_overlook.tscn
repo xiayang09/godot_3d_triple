@@ -30,11 +30,11 @@ main_ui = NodePath("../game_thirdperson_UI")
 
 [node name="3DUI" parent="." instance=ExtResource("3_7h0ta")]
 
-[node name="chatroom" parent="." instance=ExtResource("4_dpiyp")]
-
 [node name="game_thirdperson_UI" parent="." node_paths=PackedStringArray("player", "_3DUI") instance=ExtResource("2_v4kej")]
 player = NodePath("../player_ol")
 _3DUI = NodePath("../3DUI")
+
+[node name="chatroom" parent="." instance=ExtResource("4_dpiyp")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_imrop")

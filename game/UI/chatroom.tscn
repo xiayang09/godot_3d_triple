@@ -4,7 +4,6 @@
 [ext_resource type="Script" path="res://script/UI/chatroom.gd" id="1_of3vi"]
 [ext_resource type="PackedScene" uid="uid://cm8xbwqtltkcf" path="res://game/UI/chatRoomTextLine.tscn" id="3_iu3cs"]
 
-
 [node name="chatroom" type="Control"]
 process_mode = 3
 layout_mode = 3

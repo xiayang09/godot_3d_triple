@@ -1,2 +1,2 @@
 extends Button
-@export var map_name: String
+@export var map_name:String

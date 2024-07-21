@@ -21,5 +21,3 @@ Mapbox = NodePath("../map_box")
 [node name="chatroom" parent="." instance=ExtResource("4_n2qwm")]
 
 [node name="Environment" parent="." instance=ExtResource("5_q7kfe")]
-
-[editable path="player_ac"]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://bgduthxcdnmln"]
 
-[ext_resource type="Script" path="res://script/UI/game_thirdperson_UI.gd" id="1_n1q3f"]
+[ext_resource type="Script" path="res://script/UI/game_sidescrolling_UI.gd" id="1_gl15t"]
 [ext_resource type="Theme" uid="uid://1ufiqhcbexv4" path="res://asset/UI/theme/base_theme.tres" id="2_b7mvc"]
 
-[node name="game_thirdperson_UI" type="Control"]
+[node name="game_sidescrolling_UI" type="Control"]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -11,7 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_n1q3f")
+script = ExtResource("1_gl15t")
 
 [node name="GameScreen" type="Control" parent="."]
 layout_mode = 1

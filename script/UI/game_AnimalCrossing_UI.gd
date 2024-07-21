@@ -28,7 +28,7 @@ func _on_continue_pressed() -> void:
 	continueGame()
 func _on_exit_pressed() -> void:
 	continueGame()
-	get_tree().call_deferred("change_scene_to_file","res://game/start_game.tscn")
+	get_tree().call_deferred("change_scene_to_file","res://game/UI/start_game.tscn")
 func continueGame() ->void:
 	get_tree().paused = false
 	self.get_node("GameScreen").visible = true

@@ -11,11 +11,10 @@ enum Bus{Master ,Music, SFX}
 @onready var Map:String
 @onready var player:CharacterBody3D
 @onready var Character:String
-@onready var PlayerName:String = "Suzanne"
+@onready var PlayerName:String
 func _ready() -> void:
 	set_volume(1 ,0.1)
 	set_volume(2 ,0.16)
-	#print(Overlook_mode)
 func get_volume(bus_index:int)->float:
 	var db := AudioServer.get_bus_volume_db(bus_index)
 	return db_to_linear(db)
@@ -44,6 +43,9 @@ func change_character(player,skin):
 	if Global.Gamemode == Global.SideScrolling or Global.Gamemode==Global.AnimalCrossing:
 		character_skin.rotation = Vector3(0,-1.570797,0)
 func load_map(map,map_box,mapmode:int = 0):
+	var map_c = map_box.get_children()
+	for obj in map_c:
+		obj.queue_free()
 	var mappath = "res://game/map/{str}.tscn"
 	var map_s = load(mappath.format({"str":map}))
 	if mapmode ==Global.OverLook or mapmode == Global.SideScrolling or mapmode == Global.AnimalCrossing:
@@ -55,9 +57,6 @@ func load_map(map,map_box,mapmode:int = 0):
 		if Map_size == Vector3.ZERO:
 			return
 		map_q.queue_free()
-		var map_c = map_box.get_children()
-		for obj in map_c:
-			obj.queue_free()
 		var list1 = [
 			Vector2(0,0),
 			Vector2(0,Map_size.z),

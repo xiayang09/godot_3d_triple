@@ -203,7 +203,7 @@ toggle_mode = true
 button_pressed = true
 text = " 测试地图1 "
 script = ExtResource("3_dbou0")
-map_name = "overlook_map_1"
+map_name = "ol_map_1"
 
 [node name="tp_map_box" type="GridContainer" parent="mapbox"]
 visible = false
@@ -217,7 +217,7 @@ toggle_mode = true
 button_pressed = true
 text = " 平地测试(无限大) "
 script = ExtResource("3_dbou0")
-map_name = "thirdperson_map_1"
+map_name = "tp_map_1"
 
 [node name="map2" type="Button" parent="mapbox/tp_map_box"]
 layout_mode = 2
@@ -225,7 +225,7 @@ theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
 toggle_mode = true
 text = " 山地测试(无限大) "
 script = ExtResource("3_dbou0")
-map_name = "thirdperson_map_shan"
+map_name = "tp_map_shan"
 
 [node name="ss_map_box" type="GridContainer" parent="mapbox"]
 visible = false
@@ -239,7 +239,7 @@ toggle_mode = true
 button_pressed = true
 text = " 横板地图1 "
 script = ExtResource("3_dbou0")
-map_name = "sidescrolling_map_1"
+map_name = "ss_map_1"
 
 [node name="ac_map_box" type="GridContainer" parent="mapbox"]
 visible = false
@@ -253,7 +253,7 @@ toggle_mode = true
 button_pressed = true
 text = " 动森地图1 "
 script = ExtResource("3_dbou0")
-map_name = "AnimalCrossing_map_1"
+map_name = "ac_map_1"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

@@ -13,7 +13,7 @@ func _ready() -> void:
 	#var character3Dtex = $SubViewport.get_texture()
 	#$character3D.texture = character3Dtex
 	Global.Gamemode = Global.OverLook
-	Global.Map = "overlook_map_1"
+	Global.Map = "ol_map_1"
 	Global.Character = "Suzanne_001"
 	#print(Global.Map)
 func btn_tools(btn,i:int):

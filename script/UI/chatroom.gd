@@ -1,6 +1,6 @@
 extends Control
 @onready var chatbox: VBoxContainer = $ScrollContainer/chatbox
-@onready var chatRoomTextLine = load('res://game/chatRoomTextLine.tscn')
+@onready var chatRoomTextLine = load('res://game/UI/chatRoomTextLine.tscn')
 @onready var line_edit: LineEdit = $LineEdit
 @onready var scroll_container: ScrollContainer = $ScrollContainer
 @onready var chatboxheight:int = 233
@@ -29,7 +29,7 @@ func sendmesseng():
 	line_edit.visible = false
 	Global.Chatshow = false
 func _input(event: InputEvent) -> void:
-	if Input.is_action_pressed("Enter"):
+	if event.is_action_pressed("Enter"):
 		if !Global.Chatshow:
 			line_edit.grab_focus()
 			line_edit.visible = true
