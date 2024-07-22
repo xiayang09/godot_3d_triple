@@ -8,5 +8,5 @@ func enter() ->void:
 	#player.audio_stream_player.playing = false
 func physics_process_update(delta:float)->void:
 	super.physics_process_update(delta)
-	if player.direction:
+	if player.direction!=0:
 		state_machine.change_state("Run")

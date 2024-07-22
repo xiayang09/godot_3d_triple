@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cettvuwqa0yrq"]
+[gd_scene load_steps=10 format=3 uid="uid://cettvuwqa0yrq"]
 
 [ext_resource type="Script" path="res://script/game_ss.gd" id="1_57rxe"]
 [ext_resource type="PackedScene" uid="uid://d1dx2mu0jwh4l" path="res://game/player_ss.tscn" id="2_2fob0"]
-[ext_resource type="PackedScene" uid="uid://cddrbnno68635" path="res://game/UI/game_thirdperson_UI.tscn" id="3_ehj4l"]
 [ext_resource type="PackedScene" uid="uid://b3vc3t57sgu1y" path="res://game/UI/chatroom.tscn" id="3_ukbcp"]
-[ext_resource type="Script" path="res://script/UI/game_sidescrolling_UI.gd" id="4_xu88g"]
+[ext_resource type="PackedScene" uid="uid://bqoq6qy06qs60" path="res://game/map/ss_map_1.tscn" id="3_vxidf"]
+[ext_resource type="PackedScene" uid="uid://bgduthxcdnmln" path="res://game/UI/game_sidescrolling_UI.tscn" id="4_ho7xc"]
+[ext_resource type="Script" path="res://script/ss_camera.gd" id="6_of2vr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ghs51"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -19,16 +20,23 @@ sky = SubResource("Sky_sygaq")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="game_thirdperson" type="Node3D" node_paths=PackedStringArray("player")]
+[node name="game_sidescrolling" type="Node3D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_57rxe")
 player = NodePath("player_ss")
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 6, 20)
+fov = 45.0
+script = ExtResource("6_of2vr")
+player = NodePath("../player_ss")
 
 [node name="player_ss" parent="." instance=ExtResource("2_2fob0")]
 
 [node name="map_box" type="Node3D" parent="."]
 
-[node name="game_thirdperson_UI" parent="." node_paths=PackedStringArray("player", "Mapbox") instance=ExtResource("3_ehj4l")]
-script = ExtResource("4_xu88g")
+[node name="sidescrolling_map1" parent="map_box" instance=ExtResource("3_vxidf")]
+
+[node name="game_sidescrolling_UI" parent="." node_paths=PackedStringArray("player", "Mapbox") instance=ExtResource("4_ho7xc")]
 player = NodePath("../player_ss")
 Mapbox = NodePath("../map_box")
 

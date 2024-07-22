@@ -13,12 +13,30 @@ size = Vector3(60, 1, 10)
 script = ExtResource("1_vbxco")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.439744, 0, -0.5, 0)
 mesh = SubResource("BoxMesh_cg11e")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CSGMesh3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGMesh3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_os6py")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.439744, 43.5125, -6.4205, 0)
+mesh = SubResource("BoxMesh_cg11e")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGMesh3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGMesh3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_os6py")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.439744, 97.2232, -5.21795, 0)
+mesh = SubResource("BoxMesh_cg11e")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGMesh3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGMesh3D3/StaticBody3D"]
 shape = SubResource("BoxShape3D_os6py")
 
 [node name="Teapot" parent="." instance=ExtResource("2_lsc3d")]

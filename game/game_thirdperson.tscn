@@ -1,13 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://dtx17m35ri01i"]
 
-[ext_resource type="Script" path="res://script/game_ol.gd" id="1_ktcx5"]
+[ext_resource type="Script" path="res://script/game_tp.gd" id="1_qvdxm"]
 [ext_resource type="PackedScene" uid="uid://cjsmy23qa62ue" path="res://game/player_tp.tscn" id="2_3i6v0"]
 [ext_resource type="PackedScene" uid="uid://b3vc3t57sgu1y" path="res://game/UI/chatroom.tscn" id="3_tr6cq"]
 [ext_resource type="PackedScene" uid="uid://ce7rv8m5mvahs" path="res://game/environment.tscn" id="4_fhlr2"]
 [ext_resource type="PackedScene" uid="uid://cddrbnno68635" path="res://game/UI/game_thirdperson_UI.tscn" id="4_t0q2c"]
 
 [node name="game_thirdperson" type="Node3D" node_paths=PackedStringArray("player")]
-script = ExtResource("1_ktcx5")
+script = ExtResource("1_qvdxm")
 player = NodePath("player_tp")
 
 [node name="player_tp" parent="." instance=ExtResource("2_3i6v0")]
