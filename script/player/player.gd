@@ -5,7 +5,6 @@ class_name playerx
 @onready var character_rotation_root: Node3D = $characterRotationRoot
 @export var character_skin: characterSkin
 @onready var state_machine: StateMachine = $StateMachine
-@onready var camera_arm = $CameraArm
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready() -> void:

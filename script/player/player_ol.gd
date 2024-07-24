@@ -10,7 +10,7 @@ enum MODE{
 	MOUSELEFT,MOUSERIGHT,WASD
 }
 @onready var Overlook_mode:= MODE.WASD
-
+@onready var camera_arm = $CameraArm
 func _ready():
 	Overlook_mode = main_ui.get_node("PauseScreen/box/set/moveMethod").selected
 	#print(character_skin)

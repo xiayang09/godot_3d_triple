@@ -8,7 +8,6 @@
 [ext_resource type="Script" path="res://script/player/StateMachine/ac_Jump.gd" id="5_fcivt"]
 [ext_resource type="Script" path="res://script/player/StateMachine/ac_Fall.gd" id="6_jci5d"]
 
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4wri1"]
 margin = 0.0
 height = 1.0

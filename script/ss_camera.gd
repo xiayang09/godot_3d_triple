@@ -7,5 +7,5 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var playerpos = player.position
-	var target = Vector3(playerpos.x,playerpos.y+6,oldpos.z)
+	var target = Vector3(playerpos.x,playerpos.y+oldpos.y,oldpos.z)
 	self.position = self.position.slerp(target,delta*camera_smosth)

@@ -25,7 +25,7 @@ script = ExtResource("1_57rxe")
 player = NodePath("player_ss")
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player")]
-transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 6, 20)
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 5, 20)
 fov = 45.0
 script = ExtResource("6_of2vr")
 player = NodePath("../player_ss")

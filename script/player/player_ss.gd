@@ -2,9 +2,10 @@ extends playerx
 
 var direction : float
 const SPEED = 5.0
-const JUMP_VELOCITY = 8
+const JUMP_VELOCITY = 10
 const TURN_VATE = 16
 func _ready() -> void:
+	gravity = 16
 	pass
 	
 func _physics_process(delta):

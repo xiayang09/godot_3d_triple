@@ -3,7 +3,7 @@ extends playerx
 var direction:Vector3
 const SPEED = 5.0
 const JUMP_VELOCITY = 5.0
-
+@onready var camera_arm = $CameraArm
 func _ready() -> void:
 	pass
 	
